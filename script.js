@@ -12,6 +12,9 @@
   const faceImg = document.getElementById('hero-face-img');
   const particlesCanvas = document.getElementById('hero-particles-canvas');
 
+  // Mobile Device Detection
+  const isMobile = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
   // State Variables
   let isLoaded = false;
   let mouseX = 0, mouseY = 0;
@@ -64,10 +67,10 @@
     faceObj.onload = checkComplete;
     faceObj.onerror = checkComplete;
 
-    // Safety timeout to dismiss preloader after 1.2s max
+    // Safety timeout to dismiss preloader after 600ms max
     setTimeout(() => {
       dismissPreloader();
-    }, 1200);
+    }, 600);
   }
 
   function dismissPreloader() {
@@ -89,7 +92,6 @@
   // Layer 3 (Particles): Scroll-velocity reactive depth particles
   // =========================================================================
   function init3DParallax() {
-    const isMobile = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
     if (isMobile) return;
 
     // Mousemove listener (Desktop)
@@ -168,7 +170,6 @@
   function initFloatingParticles() {
     if (!particlesCanvas) return;
 
-    const isMobile = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
     if (isMobile) {
       particlesCanvas.style.display = 'none';
       return;
@@ -176,7 +177,6 @@
 
     const ctx = particlesCanvas.getContext('2d');
     let particles = [];
-    const isMobile = window.innerWidth <= 768;
     const particleCount = isMobile ? 30 : 60;
 
     let prevScrollPos = window.scrollY || 0;
@@ -192,8 +192,7 @@
       // Accumulate velocity to make particles react dynamically to scroll speed
       currentScrollVel += delta * 0.45;
 
-      const isMobileDevice = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-      if (isMobileDevice) {
+      if (isMobile) {
         isMobileScrolling = true;
         clearTimeout(mobileScrollTimeout);
         mobileScrollTimeout = setTimeout(() => {
@@ -287,8 +286,7 @@
     particles = Array.from({ length: particleCount }, () => new Particle());
 
     function animateParticles() {
-      const isMobileDevice = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-      if (isMobileDevice && isMobileScrolling) {
+      if (isMobile && isMobileScrolling) {
         requestAnimationFrame(animateParticles);
         return;
       }
@@ -501,12 +499,12 @@
       if (cinemaModal.parentElement !== document.body) {
         document.body.appendChild(cinemaModal);
       }
-      const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
-      cinemaIframe.src = embedUrl;
+      cinemaIframe.src = 'https://www.youtube.com/embed/' + youtubeId + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
       cinemaModal.classList.add('active');
       lockBodyScroll();
 
       // Unlock pricing upon watching video
+      localStorage.setItem('hasWatchedVideo', 'true');
       if (typeof window.markVideoAsWatched === 'function') {
         window.markVideoAsWatched();
       }
@@ -535,6 +533,17 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && cinemaModal.classList.contains('active')) {
         window.closeCinemaPlayer();
+      }
+    });
+
+    // Global Event Delegation: Clicking any project card or play overlay opens Cinema Player
+    document.addEventListener('click', (e) => {
+      const card = e.target.closest('[data-youtube-id]');
+      if (card && !e.target.closest('.carousel-arrow')) {
+        const youtubeId = card.getAttribute('data-youtube-id');
+        if (youtubeId && window.openCinemaPlayer) {
+          window.openCinemaPlayer(youtubeId);
+        }
       }
     });
   }
@@ -1115,8 +1124,6 @@
   let lenisInstance = null;
 
   function initLenisScroll() {
-    const isMobile = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-
     if (!isMobile && typeof Lenis !== 'undefined') {
       if (!lenisInstance) {
         lenisInstance = new Lenis({
@@ -1150,14 +1157,121 @@
   init3DParallax();
   initFloatingParticles();
 
+  // =========================================================================
+  // UNIFIED GLOBAL EVENT DELEGATION ENGINE FOR ALL MODALS & CINEMA LIGHTBOX
+  // Survives all dynamic DOM re-renders and innerHTML overwrites seamlessly
+  // =========================================================================
+  function initGlobalModalDelegation() {
+    document.addEventListener('click', (e) => {
+      // 1. Video Project Card Click (Opens Lightbox Video Player)
+      const card = e.target.closest('[data-youtube-id]');
+      if (card && !e.target.closest('.carousel-arrow') && !e.target.closest('.pricing-cta-btn')) {
+        e.preventDefault();
+        const youtubeId = card.getAttribute('data-youtube-id');
+        if (youtubeId && window.openCinemaPlayer) {
+          window.openCinemaPlayer(youtubeId);
+        }
+        return;
+      }
+
+      // 2. View My Work / All Projects Modal
+      if (e.target.closest('#hero-view-work-btn') || e.target.closest('#open-projects-modal-btn') || e.target.closest('.open-projects-modal-btn')) {
+        e.preventDefault();
+        const modal = document.getElementById('all-projects-modal');
+        if (modal) {
+          modal.classList.add('active');
+          lockBodyScroll();
+        }
+        return;
+      }
+
+      // 3. FAQ Modal
+      if (e.target.closest('#open-faq-btn')) {
+        e.preventDefault();
+        const modal = document.getElementById('faq-modal');
+        if (modal) {
+          modal.classList.add('active');
+          lockBodyScroll();
+        }
+        return;
+      }
+
+      // 4. 4+ Years Experience Modal
+      if (e.target.closest('#open-experience-modal-btn')) {
+        e.preventDefault();
+        const modal = document.getElementById('experience-modal');
+        if (modal) {
+          modal.classList.add('active');
+          lockBodyScroll();
+        }
+        return;
+      }
+
+      // 5. Pricing Widget Card
+      if (e.target.closest('#hero-pricing-widget')) {
+        e.preventDefault();
+        if (localStorage.getItem('hasWatchedVideo') === 'true') {
+          const modal = document.getElementById('pricing-modal');
+          if (modal) {
+            modal.classList.add('active');
+            lockBodyScroll();
+          }
+        } else {
+          const toast = document.getElementById('pricing-locked-toast');
+          if (toast) {
+            toast.classList.add('active');
+            document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => toast.classList.remove('active'), 4500);
+          }
+        }
+        return;
+      }
+
+      // 6. Close Any Modal or Notification Toast
+      if (e.target.closest('.modal-close-btn') || e.target.closest('#close-cinema-modal-btn') || e.target.closest('#close-pricing-toast-btn')) {
+        e.preventDefault();
+        e.stopPropagation();
+        document.querySelectorAll('.modal-overlay, .cinema-modal-overlay, .pricing-toast-overlay').forEach(m => m.classList.remove('active'));
+        const iframe = document.getElementById('cinema-iframe');
+        if (iframe) iframe.src = '';
+        unlockBodyScroll();
+        return;
+      }
+
+      // 7. Click Outside Container (Modal Overlay Backdrop Click)
+      if (e.target.classList.contains('modal-overlay') || e.target.classList.contains('cinema-modal-overlay')) {
+        e.target.classList.remove('active');
+        if (e.target.id === 'cinema-video-modal') {
+          const iframe = document.getElementById('cinema-iframe');
+          if (iframe) iframe.src = '';
+        }
+        unlockBodyScroll();
+        return;
+      }
+    });
+
+    // 8. Global ESC Key Listener
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active, .cinema-modal-overlay.active, .pricing-toast-overlay.active').forEach(m => m.classList.remove('active'));
+        const iframe = document.getElementById('cinema-iframe');
+        if (iframe) iframe.src = '';
+        unlockBodyScroll();
+      }
+    });
+  }
+
   function setupFeatures() {
+    initGlobalModalDelegation();
+    initProjectsCarousel();
+    initProjectsModal();
     initCinemaModal();
     initContactForm();
-    loadAndRenderProjectsData();
     initFaqModal();
     initHeroViewWorkBtn();
     initExperienceModal();
     initPricingSystem();
+    loadAndRenderProjectsData();
   }
   document.addEventListener('DOMContentLoaded', setupFeatures);
   if (document.readyState === 'interactive' || document.readyState === 'complete') {

@@ -1651,9 +1651,12 @@ select.form-input option[disabled] {
   transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.modal-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
+.modal-overlay.active,
+.cinema-modal-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  pointer-events: auto !important;
 }
 
 .modal-container,
