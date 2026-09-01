@@ -126,7 +126,7 @@
       const glowOpacity = 0.35 + Math.abs(Math.sin(scrollPhase)) * 0.15;
 
       if (faceImg) {
-        faceImg.style.transform = `translate(-50%, -50%) scale(${breathScale.toFixed(4)})`;
+        faceImg.style.transform = `translate(-50%, -50%) scale(${breathScale.toFixed(4)}) translateZ(0)`;
         faceImg.style.filter = `contrast(1.08) brightness(1.03) drop-shadow(0 0 ${glowSpread.toFixed(1)}px rgba(255, 69, 0, ${glowOpacity.toFixed(2)}))`;
       }
 
@@ -159,12 +159,24 @@
     let prevScrollPos = window.scrollY || 0;
     let currentScrollVel = 0;
 
+    let isMobileScrolling = false;
+    let mobileScrollTimeout = null;
+
     window.addEventListener('scroll', () => {
       const curY = window.scrollY || window.pageYOffset || 0;
       const delta = curY - prevScrollPos;
       prevScrollPos = curY;
       // Accumulate velocity to make particles react dynamically to scroll speed
       currentScrollVel += delta * 0.45;
+
+      const isMobileDevice = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+      if (isMobileDevice) {
+        isMobileScrolling = true;
+        clearTimeout(mobileScrollTimeout);
+        mobileScrollTimeout = setTimeout(() => {
+          isMobileScrolling = false;
+        }, 120);
+      }
     }, { passive: true });
 
     function resizeParticlesCanvas() {
@@ -252,6 +264,12 @@
     particles = Array.from({ length: particleCount }, () => new Particle());
 
     function animateParticles() {
+      const isMobileDevice = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+      if (isMobileDevice && isMobileScrolling) {
+        requestAnimationFrame(animateParticles);
+        return;
+      }
+
       const width = particlesCanvas.offsetWidth || window.innerWidth;
       const height = particlesCanvas.offsetHeight || window.innerHeight;
 
@@ -342,7 +360,7 @@
       "categorySlug": "ai-video scripting editing",
       "description": "Full AI-generated narrative commercial. Concept, scriptwriting, AI character synthesis, Premiere Pro editing, and After Effects sound design.",
       "youtubeId": "RmndE-qelJ8",
-      "thumbnail": "images/kjsst-mobile-finance.jpg",
+      "thumbnail": "public/images/kjsst-mobile-finance.jpg",
       "tags": ["AI Short Film", "Premiere Pro", "After Effects", "Direction"]
     },
     {
@@ -352,7 +370,7 @@
       "categorySlug": "motion editing",
       "description": "13-second high-energy kinetic intro & fashion montage for New Kumar Collection. Custom typography, 3D motion graphics, and chemical VFX in After Effects.",
       "youtubeId": "XOiF_tvb0xo",
-      "thumbnail": "images/breaking-bad-montage.jpg",
+      "thumbnail": "public/images/breaking-bad-montage.jpg",
       "tags": ["After Effects", "Motion Graphics", "Typography", "VFX"]
     },
     {
@@ -362,7 +380,7 @@
       "categorySlug": "ai-video editing",
       "description": "High-impact commercial video for KMR Wholesale Electronics. AI image synthesis, product compositing, dynamic typography, and pacing.",
       "youtubeId": "bACz4j1bdJg",
-      "thumbnail": "images/kmr-wholesale.jpg",
+      "thumbnail": "public/images/kmr-wholesale.jpg",
       "tags": ["AI Commercial", "Premiere Pro", "Compositing", "E-commerce"]
     }
   ];
@@ -371,14 +389,19 @@
 
   function createProjectCardHTML(item, isCarousel = false) {
     const rawThumb = item.thumbnail || '';
-    const thumbSrc = rawThumb.startsWith('/') ? rawThumb.substring(1) : rawThumb;
+    let thumbSrc = rawThumb;
+    if (rawThumb.startsWith('/images/')) {
+      thumbSrc = 'public' + rawThumb;
+    } else if (rawThumb.startsWith('images/')) {
+      thumbSrc = 'public/' + rawThumb;
+    }
     const catSlug = item.categorySlug || 'ai-video editing';
     const tagSpans = (item.tags || []).map(t => `<span>${t}</span>`).join('');
 
     return `
       <div class="project-card ${isCarousel ? 'carousel-card' : 'modal-project-card'}" data-id="${item.id}" data-category="${catSlug}" data-youtube-id="${item.youtubeId}">
         <div class="project-thumb">
-          <img src="${thumbSrc}" onerror="this.src='${rawThumb}'" alt="${item.title}">
+          <img src="${thumbSrc}" onerror="this.src='https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg'" alt="${item.title}">
           <div class="play-overlay">
             <span class="play-btn">▶</span>
           </div>
@@ -1066,8 +1089,44 @@
     updatePricingWidgetUI();
   }
 
+  // =========================================================================
+  // LENIS SMOOTH SCROLL ENGINE (DESKTOP ONLY — DISABLED ON MOBILE TOUCH)
+  // =========================================================================
+  let lenisInstance = null;
+
+  function initLenisScroll() {
+    const isDesktop = window.innerWidth >= 768 && !('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
+    if (isDesktop && typeof Lenis !== 'undefined') {
+      if (!lenisInstance) {
+        lenisInstance = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          smoothTouch: false
+        });
+
+        function raf(time) {
+          if (lenisInstance) {
+            lenisInstance.raf(time);
+            requestAnimationFrame(raf);
+          }
+        }
+        requestAnimationFrame(raf);
+      }
+    } else {
+      if (lenisInstance) {
+        lenisInstance.destroy();
+        lenisInstance = null;
+      }
+    }
+  }
+
+  window.addEventListener('resize', initLenisScroll, { passive: true });
+
   // Start initialization
   initPreloader();
+  initLenisScroll();
   init3DParallax();
   initFloatingParticles();
 

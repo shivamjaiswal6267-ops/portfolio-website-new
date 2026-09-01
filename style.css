@@ -2971,3 +2971,47 @@ html, body {
     max-width: 100%;
   }
 }
+
+/* --------------------------------------------------------------------------
+   MOBILE GPU OPTIMIZATION & FLICKER/CLIPPING RECTANGLE ELIMINATION (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Prevent GPU compositing tile crashes by adding hardware acceleration properties */
+  .fixed-parallax-stage,
+  .hero-face-img,
+  .hero-pricing-widget {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Optimize mobile glassmorphism cards: Replace heavy backdrop-filter blur with lightweight blur */
+  .glass-panel,
+  .project-card,
+  .service-card,
+  .stat-card,
+  .about-card,
+  .pricing-card,
+  .hero-pricing-widget,
+  .pricing-toast-content,
+  .hero-subrole-badge,
+  .modal-container,
+  .navbar {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    background: rgba(18, 18, 20, 0.92) !important;
+  }
+
+  /* Ensure hero left/right columns and background portrait do not overlap into conflicting clipping layers */
+  .hero-split-layout {
+    isolation: isolate;
+  }
+
+  .hero-left-col,
+  .hero-right-col {
+    position: relative;
+    z-index: 5;
+    isolation: isolate;
+  }
+}

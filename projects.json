@@ -32,7 +32,7 @@
     "category": "AI SHORT FILM",
     "description": "Full AI-generated narrative commercial. Concept, scriptwriting, AI character synthesis, Premiere Pro editing, and After Effects sound design.",
     "youtubeId": "RmndE-qelJ8",
-    "thumbnail": "/images/kjsst-mobile-finance.jpg",
+    "thumbnail": "public/images/kjsst-mobile-finance.jpg",
     "tags": ["AI Short Film", "Premiere Pro", "After Effects", "Direction"]
   },
   {
@@ -41,7 +41,7 @@
     "category": "MOTION GRAPHICS",
     "description": "13-second high-energy kinetic intro & fashion montage for New Kumar Collection. Custom typography, 3D motion graphics, and chemical VFX in After Effects.",
     "youtubeId": "XOiF_tvb0xo",
-    "thumbnail": "/images/breaking-bad-montage.jpg",
+    "thumbnail": "public/images/breaking-bad-montage.jpg",
     "tags": ["After Effects", "Motion Graphics", "Typography", "VFX"]
   },
   {
@@ -50,7 +50,7 @@
     "category": "AI COMMERCIAL",
     "description": "High-impact commercial video for KMR Wholesale Electronics. AI image synthesis, product compositing, dynamic typography, and pacing.",
     "youtubeId": "bACz4j1bdJg",
-    "thumbnail": "/images/kmr-wholesale.jpg",
+    "thumbnail": "public/images/kmr-wholesale.jpg",
     "tags": ["AI Commercial", "Premiere Pro", "Compositing", "E-commerce"]
   }
 ]
