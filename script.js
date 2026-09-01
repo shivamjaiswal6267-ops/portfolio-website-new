@@ -21,9 +21,10 @@
   let targetMouseX = 0, targetMouseY = 0;
   let scrollY = 0, targetScrollY = 0;
 
-  // Scroll Lock Helpers for Modals (Prevents Background Body Scroll Leak)
+  // Scroll Lock Helpers for Modals (Prevents Background Body Scroll Leak & iPhone Safari Freeze)
   function lockBodyScroll() {
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.touchAction = 'none';
   }
 
@@ -31,6 +32,7 @@
     const activeModals = document.querySelectorAll('.modal-overlay.active, .cinema-modal-overlay.active');
     if (activeModals.length === 0) {
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
       document.body.style.touchAction = '';
     }
   }
@@ -604,8 +606,9 @@
 
     function updateCarousel(withTransition = true) {
       const firstCard = allCards[0];
-      const cardWidth = firstCard ? (firstCard.offsetWidth || 340) : 340;
-      const gap = 24;
+      const defaultWidth = isMobile ? Math.floor(window.innerWidth * 0.82) : 340;
+      const cardWidth = (firstCard && firstCard.offsetWidth) ? firstCard.offsetWidth : defaultWidth;
+      const gap = isMobile ? 16 : 24;
       const step = cardWidth + gap;
 
       const trackIndex = N + virtualIndex;
@@ -701,6 +704,7 @@
     let touchEndY = 0;
 
     carousel.addEventListener('touchstart', (e) => {
+      stopAutoSlide();
       if (e.touches && e.touches.length > 0) {
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
@@ -719,13 +723,12 @@
         if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 35) {
           if (deltaX < 0) {
             nextSlide();
-            resetAutoSlide();
           } else {
             prevSlide();
-            resetAutoSlide();
           }
         }
       }
+      resetAutoSlide();
     }, { passive: true });
 
     allCards.forEach((card, idx) => {
@@ -1127,8 +1130,8 @@
     if (!isMobile && typeof Lenis !== 'undefined') {
       if (!lenisInstance) {
         lenisInstance = new Lenis({
-          duration: 1.2,
-          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          duration: 0.8,
+          wheelMultiplier: 0.9,
           smoothWheel: true,
           smoothTouch: false
         });
