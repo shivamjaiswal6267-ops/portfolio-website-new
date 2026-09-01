@@ -746,129 +746,37 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   SITE-WIDE ROTATING GLOWING ORANGE BORDER ENGINE (ALL BOXES & CARDS)
+   HARDWARE-EFFICIENT CARD STYLING & BORDERS (OPTIMIZED FOR MOBILE PERFORMANCE)
    -------------------------------------------------------------------------- */
-@keyframes rotateBoxBorder {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .greeting-badge,
-.hero-subrole-badge,
-.experience-badge-hero,
-.social-link,
-.btn-primary,
-.btn-outline,
-.info-card,
 .service-card,
 .tech-card,
 .project-card,
-.contact-form-box,
+.info-card,
 .stat-item,
-.modal-container,
 .faq-item {
-  position: relative !important;
-  overflow: hidden !important;
-  z-index: 1;
+  background: rgba(16, 16, 20, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-/* Ensure all child content inside cards renders cleanly on top of rotating borders */
-.greeting-badge > *,
-.hero-subrole-badge > *,
-.experience-badge-hero > *,
-.social-link > *,
-.btn-primary > *,
-.btn-outline > *,
-.info-card > *,
-.service-card > *,
-.tech-card > *,
-.project-card > *,
-.contact-form-box > *,
-.stat-item > *,
-.modal-container > *,
-.faq-item > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* Rotating conic-gradient glow layer */
-.greeting-badge::before,
-.hero-subrole-badge::before,
-.experience-badge-hero::before,
-.social-link::before,
-.btn-primary::before,
-.btn-outline::before,
-.info-card::before,
-.service-card::before,
-.tech-card::before,
-.project-card::before,
-.contact-form-box::before,
-.stat-item::before,
-.faq-item::before {
-  content: '';
-  position: absolute;
-  top: -60%;
-  left: -60%;
-  width: 220%;
-  height: 220%;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    transparent 180deg,
-    var(--orange-primary) 260deg,
-    #ff7700 320deg,
-    var(--orange-primary) 360deg
-  );
-  animation: rotateBoxBorder 3.5s linear infinite;
-  z-index: -2;
-  pointer-events: none;
-}
-
-/* Inner masking background layer */
-.greeting-badge::after,
-.hero-subrole-badge::after,
-.experience-badge-hero::after,
-.social-link::after,
-.info-card::after,
-.service-card::after,
-.tech-card::after,
-.project-card::after,
-.contact-form-box::after,
-.stat-item::after,
-.faq-item::after {
-  content: '';
-  position: absolute;
-  inset: 1.5px;
-  background: rgba(14, 14, 18, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-radius: inherit;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  inset: 1.5px;
-  background: var(--orange-primary);
-  border-radius: inherit;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.btn-outline::after {
-  content: '';
-  position: absolute;
-  inset: 1.5px;
-  background: rgba(14, 14, 18, 0.95);
-  border-radius: inherit;
-  z-index: -1;
-  pointer-events: none;
+.greeting-badge:hover,
+.greeting-badge:active,
+.service-card:hover,
+.service-card:active,
+.tech-card:hover,
+.tech-card:active,
+.project-card:hover,
+.project-card:active,
+.info-card:hover,
+.info-card:active,
+.stat-item:hover,
+.stat-item:active,
+.faq-item:hover,
+.faq-item:active,
+.faq-item.open {
+  border-color: rgba(255, 69, 0, 0.6);
+  box-shadow: 0 6px 25px rgba(255, 69, 0, 0.25);
 }
 
 .social-link {
@@ -1742,11 +1650,17 @@ select.form-input option[disabled] {
   pointer-events: auto;
 }
 
-.modal-container {
+.modal-container,
+#all-projects-modal .modal-container,
+#pricing-modal .modal-container,
+#faq-modal .modal-container,
+#experience-modal .modal-container {
   width: 100%;
   max-width: 1100px;
   max-height: 85vh;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   border-radius: 24px;
   padding: 36px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
@@ -1758,6 +1672,8 @@ select.form-input option[disabled] {
   max-width: 1100px !important;
   max-height: 85vh !important;
   overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch !important;
   border-radius: 24px !important;
   padding: 0 !important;
   position: relative !important;
@@ -2771,6 +2687,8 @@ html, body {
   max-width: 1100px !important;
   max-height: 85vh !important;
   overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch !important;
   border-radius: 24px !important;
   padding: 0 !important;
   position: relative !important;

@@ -18,6 +18,20 @@
   let targetMouseX = 0, targetMouseY = 0;
   let scrollY = 0, targetScrollY = 0;
 
+  // Scroll Lock Helpers for Modals (Prevents Background Body Scroll Leak)
+  function lockBodyScroll() {
+    document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
+  }
+
+  function unlockBodyScroll() {
+    const activeModals = document.querySelectorAll('.modal-overlay.active, .cinema-modal-overlay.active');
+    if (activeModals.length === 0) {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+  }
+
   // =========================================================================
   // PRELOADER & ASSET LOADER
   // =========================================================================
@@ -75,6 +89,9 @@
   // Layer 3 (Particles): Scroll-velocity reactive depth particles
   // =========================================================================
   function init3DParallax() {
+    const isMobile = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    if (isMobile) return;
+
     // Mousemove listener (Desktop)
     window.addEventListener('mousemove', (e) => {
       targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
@@ -150,6 +167,12 @@
   // =========================================================================
   function initFloatingParticles() {
     if (!particlesCanvas) return;
+
+    const isMobile = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    if (isMobile) {
+      particlesCanvas.style.display = 'none';
+      return;
+    }
 
     const ctx = particlesCanvas.getContext('2d');
     let particles = [];
@@ -481,7 +504,7 @@
       const embedUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
       cinemaIframe.src = embedUrl;
       cinemaModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      lockBodyScroll();
 
       // Unlock pricing upon watching video
       if (typeof window.markVideoAsWatched === 'function') {
@@ -492,10 +515,7 @@
     window.closeCinemaPlayer = function() {
       cinemaModal.classList.remove('active');
       cinemaIframe.src = '';
-      const activeModals = document.querySelectorAll('.modal-overlay.active:not(#cinema-video-modal)');
-      if (activeModals.length === 0) {
-        document.body.style.overflow = '';
-      }
+      unlockBodyScroll();
     };
 
     if (closeBtn) {
@@ -737,12 +757,12 @@
 
     function openModal() {
       modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      lockBodyScroll();
     }
 
     function closeModal() {
       modal.classList.remove('active');
-      document.body.style.overflow = '';
+      unlockBodyScroll();
     }
 
     if (openBtn) openBtn.addEventListener('click', openModal);
@@ -804,12 +824,12 @@
 
     function openModal() {
       modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      lockBodyScroll();
     }
 
     function closeModal() {
       modal.classList.remove('active');
-      document.body.style.overflow = '';
+      unlockBodyScroll();
     }
 
     if (openBtn) openBtn.addEventListener('click', openModal);
@@ -851,7 +871,7 @@
       viewWorkBtn.addEventListener('click', (e) => {
         e.preventDefault();
         projectsModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        lockBodyScroll();
       });
     }
   }
@@ -871,13 +891,13 @@
 
     function openModal() {
       modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      lockBodyScroll();
       setTimeout(updateTimelineProgress, 200);
     }
 
     function closeModal() {
       modal.classList.remove('active');
-      document.body.style.overflow = '';
+      unlockBodyScroll();
     }
 
     if (openBtn) openBtn.addEventListener('click', openModal);
@@ -993,7 +1013,7 @@
       pricingModal.style.opacity = '1';
       pricingModal.style.visibility = 'visible';
       pricingModal.style.pointerEvents = 'auto';
-      document.body.style.overflow = 'hidden';
+      lockBodyScroll();
     }
 
     function closePricingModal() {
@@ -1003,7 +1023,7 @@
       pricingModal.style.opacity = '';
       pricingModal.style.visibility = '';
       pricingModal.style.pointerEvents = '';
-      document.body.style.overflow = '';
+      unlockBodyScroll();
     }
 
     // Expose openPricingModal globally
@@ -1095,9 +1115,9 @@
   let lenisInstance = null;
 
   function initLenisScroll() {
-    const isDesktop = window.innerWidth >= 768 && !('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    const isMobile = window.innerWidth < 768 || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
 
-    if (isDesktop && typeof Lenis !== 'undefined') {
+    if (!isMobile && typeof Lenis !== 'undefined') {
       if (!lenisInstance) {
         lenisInstance = new Lenis({
           duration: 1.2,
