@@ -30,6 +30,13 @@
       <div class="progress-detail" id="progress-detail">Loading portfolio assets...</div>
     </div>
   </div>
+  <script>
+    // Emergency preloader auto-dismiss after 800ms
+    setTimeout(function() {
+      var p = document.getElementById('preloader');
+      if (p) p.classList.add('loaded');
+    }, 800);
+  </script>
 
   <!-- Fullscreen Fixed Parallax Stage (Covers Entire Website Background) -->
   <div class="hero-parallax-stage fixed-parallax-stage" id="hero-parallax-stage">
