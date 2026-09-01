@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Complete App Masterclass & Motion Design",
+    "category": "TUTORIAL & MOTION",
+    "description": "Comprehensive app tutorial featuring high-impact screen recording, custom After Effects motion graphics, original voiceover, and engaging CTA pacing.",
+    "youtubeId": "HRAMQcXxt9I",
+    "thumbnail": "https://img.youtube.com/vi/HRAMQcXxt9I/maxresdefault.jpg",
+    "tags": ["After Effects", "Motion Graphics", "Voiceover", "AI Video"]
+  },
+  {
+    "id": 2,
+    "title": "High-Converting AI Commercial Showreel",
+    "category": "AI COMMERCIAL",
+    "description": "100% AI-generated commercial video crafted for client gigs. Scriptwriting, ElevenLabs cinematic voiceover, custom prompt engineering, and Premiere Pro mastering.",
+    "youtubeId": "ckwfOdij-uQ",
+    "thumbnail": "https://img.youtube.com/vi/ckwfOdij-uQ/maxresdefault.jpg",
+    "tags": ["AI Video", "Premiere Pro", "ElevenLabs", "Commercial"]
+  },
+  {
+    "id": 3,
+    "title": "WhatsApp AI Cinematic Short Film",
+    "category": "AI SHORT FILM",
+    "description": "Story-driven AI short film utilizing full AI workflow generation, custom cinematic narrative, character consistency, and sound design in Premiere Pro.",
+    "youtubeId": "VJKznoS4TIo",
+    "thumbnail": "https://img.youtube.com/vi/VJKznoS4TIo/maxresdefault.jpg",
+    "tags": ["AI Film", "Storytelling", "Premiere Pro", "Cinematic"]
+  },
+  {
+    "id": 4,
+    "title": "KJSST Mobile Finance — AI Short Film",
+    "category": "AI SHORT FILM",
+    "description": "Full AI-generated narrative commercial. Concept, scriptwriting, AI character synthesis, Premiere Pro editing, and After Effects sound design.",
+    "youtubeId": "RmndE-qelJ8",
+    "thumbnail": "/images/kjsst-mobile-finance.jpg",
+    "tags": ["AI Short Film", "Premiere Pro", "After Effects", "Direction"]
+  },
+  {
+    "id": 5,
+    "title": "Breaking Bad Inspired Fashion Montage",
+    "category": "MOTION GRAPHICS",
+    "description": "13-second high-energy kinetic intro & fashion montage for New Kumar Collection. Custom typography, 3D motion graphics, and chemical VFX in After Effects.",
+    "youtubeId": "XOiF_tvb0xo",
+    "thumbnail": "/images/breaking-bad-montage.jpg",
+    "tags": ["After Effects", "Motion Graphics", "Typography", "VFX"]
+  },
+  {
+    "id": 6,
+    "title": "Offline vs Online Shopping — KMR Commercial",
+    "category": "AI COMMERCIAL",
+    "description": "High-impact commercial video for KMR Wholesale Electronics. AI image synthesis, product compositing, dynamic typography, and pacing.",
+    "youtubeId": "bACz4j1bdJg",
+    "thumbnail": "/images/kmr-wholesale.jpg",
+    "tags": ["AI Commercial", "Premiere Pro", "Compositing", "E-commerce"]
+  }
+]

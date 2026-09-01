@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shivam Jaiswal — Video Editor & Motion Graphics Designer</title>
+  <meta name="description" content="Portfolio of Shivam Jaiswal — Video Editor & Motion Graphics Designer crafting cinematic AI videos, high-impact edits, and motion graphics.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lenis Smooth Scroll CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <link rel="stylesheet" href="style.css?v=5.0">
+</head>
+<body>
+
+  <!-- Preloader Overlay -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="loader-spinner"></div>
+      <h2 class="loader-title">SHIVAM JAISWAL</h2>
+      <div class="progress-bar-container">
+        <div id="progress-bar"></div>
+      </div>
+      <div class="progress-text" id="progress-text">0%</div>
+      <div class="progress-detail" id="progress-detail">Loading portfolio assets...</div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Fixed Parallax Stage (Covers Entire Website Background) -->
+  <div class="hero-parallax-stage fixed-parallax-stage" id="hero-parallax-stage">
+    <!-- Layer 1: Background (hero-bg.jpg) — Fixed across entire website -->
+    <div class="parallax-layer layer-bg" id="hero-layer-bg">
+      <img src="hero-bg.jpg" alt="Hero Background" class="hero-bg-img">
+      <div class="hero-bg-vignette"></div>
+    </div>
+
+    <!-- Layer 2: Face (hero-face.png) — Right Side, Medium Speed, White as Transparent -->
+    <div class="parallax-layer layer-face" id="hero-layer-face">
+      <img src="hero-face.png" alt="Shivam Jaiswal" class="hero-face-img" id="hero-face-img">
+    </div>
+
+    <!-- Layer 3: Floating Particles Foreground — Fixed full screen -->
+    <canvas id="hero-particles-canvas" class="parallax-layer layer-particles"></canvas>
+  </div>
+
+  <!-- Main Scrollable Content Layer -->
+  <main id="main-content">
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="brand-logo">
+          <span class="logo-icon">▲</span>
+          SHIVAM<span class="text-orange">JAISWAL</span>
+        </a>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="#home" class="active">HOME</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#stats">STATS</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+          <a href="#contact" class="btn-primary">
+            LET'S TALK
+            <span class="btn-icon">🚀</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-container">
+        <!-- Faint Code Background Watermark -->
+        <div class="code-watermark">
+          <pre><code>const creator = {
+  name: 'Shivam Jaiswal',
+  role: 'Premium Advertisement Creator & AI Filmmaker',
+  tagline: 'I build high-impact video ads that turn viewers into paying customers.',
+  subscribers: '321K+',
+  views: '118M+',
+  skills: ['AI Video Ads', 'Motion Graphics', 'Premiere Pro', 'Veo 3']
+};
+
+function craftHighConvertingAds() {
+  return 'Cinematic Visuals + Retention Hooks + Revenue';
+}</code></pre>
+        </div>
+
+        <!-- Split Layout: Content Left, Face & Widget Right -->
+        <div class="hero-split-layout">
+          <!-- Left Column: Text Content Box -->
+          <div class="hero-content-box hero-left-col" style="padding-top: 110px;">
+            <div class="greeting-badge">
+              <span>⚡ PREMIUM ADVERTISEMENT CREATOR & AI FILMMAKER</span>
+            </div>
+            <h1 class="hero-name">
+              SHIVAM <span class="text-orange">JAISWAL</span>
+            </h1>
+            <div class="hero-role-bar">
+              <span class="hero-role">PREMIUM ADVERTISEMENT CREATOR & AI FILMMAKER</span>
+              <span class="typing-cursor">|</span>
+            </div>
+            <div class="hero-subrole-badge">
+              <span class="subrole-icon">⚡</span>
+              <span>Founder of <strong class="text-orange">ADP (Aapka Digital Partner)</strong> — Digital Marketing Agency</span>
+            </div>
+            <p class="hero-tagline">
+              I build high-impact video ads that turn viewers into paying customers.
+            </p>
+            <p class="hero-subtext">
+              Specializing in AI-generated commercials, kinetic motion graphics, and retention-focused video ads for modern brands.
+            </p>
+
+            <div class="hero-actions-row">
+              <div class="hero-cta-group">
+                <button id="hero-view-work-btn" class="btn-primary btn-large">
+                  VIEW MY WORK
+                  <span class="btn-icon">➔</span>
+                </button>
+                <button id="open-faq-btn" class="btn-outline btn-large">
+                  FAQ
+                  <span class="btn-icon">❓</span>
+                </button>
+              </div>
+
+              <!-- Experience Badge -->
+              <div class="experience-badge-hero" id="open-experience-modal-btn" title="Click to view 4+ Years Career Timeline">
+                <div class="badge-number">4+</div>
+                <div class="badge-text">
+                  <span>YEARS OF</span>
+                  <span>EXPERIENCE</span>
+                </div>
+                <span class="badge-code">⌛</span>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-bar">
+              <span class="social-label">FIND ME ON</span>
+              <div class="social-icons">
+                <a href="https://www.youtube.com/@p4prime" target="_blank" rel="noopener noreferrer" title="YouTube" class="social-link">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/shivamjaiswaladp?igsi=aXZjaXFhYmw3bnR4" target="_blank" rel="noopener noreferrer" title="Instagram" class="social-link">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.fiverr.com/s/xrdeeD4" target="_blank" rel="noopener noreferrer" title="Fiverr" class="social-link">
+                  <img src="fiverr-logo.png" alt="Fiverr" class="fiverr-icon-img">
+                </a>
+                <a href="https://wa.me/916267031972" target="_blank" rel="noopener noreferrer" title="WhatsApp" class="social-link">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.461C6.302 21.843 1.843 17.384 1.843 11.63 1.843 6.883 5.419 2.973 10.12 2.058c.632-.123 1.282-.187 1.933-.187 5.753 0 10.212 4.459 10.212 10.213 0 2.274-.727 4.488-2.096 6.304l1.378 5.034-5.132-1.348c-1.748 1.159-3.805 1.771-5.91 1.771M12.053 0C5.397 0 0 5.397 0 12.053c0 2.126.556 4.197 1.61 6.024L0 24l6.107-1.603c1.767.963 3.766 1.47 5.946 1.47 6.656 0 12.053-5.397 12.053-12.053C24.106 5.397 18.709 0 12.053 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Gamified Pricing Widget floating card -->
+          <div class="hero-right-col">
+            <div id="hero-pricing-widget" class="hero-pricing-widget locked" role="button" tabindex="0" title="Click to view pricing & service rates" onclick="if(window.openPricingModal) window.openPricingModal();">
+              <div class="pricing-widget-badge-header">
+                <span class="pricing-widget-lock-icon" id="pricing-widget-icon">🔒</span>
+                <span class="pricing-widget-status-badge" id="pricing-widget-status-badge">Locked</span>
+              </div>
+              <div class="pricing-widget-body">
+                <h3 class="pricing-widget-title" id="pricing-widget-title">Check Pricing & Rates (Locked)</h3>
+                <p class="pricing-widget-subtext" id="pricing-widget-subtext">Watch 1 video to unlock rates</p>
+              </div>
+              <div class="pricing-widget-footer">
+                <span class="pricing-widget-counter" id="pricing-widget-counter">0/1 Videos Watched</span>
+                <span class="pricing-widget-arrow">➔</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Selected Work (Projects Infinite Loop Carousel) -->
+    <section class="projects-section" id="projects">
+      <div class="section-container">
+        <div class="section-header space-between">
+          <div>
+            <span class="section-tag">FEATURED PROJECTS</span>
+            <h2 class="section-heading">Selected Work</h2>
+          </div>
+          <button id="open-projects-modal-btn" class="link-more open-projects-modal-btn">
+            VIEW ALL PROJECTS ➔
+          </button>
+        </div>
+
+        <div class="carousel-wrapper">
+          <button class="carousel-arrow carousel-arrow-left" id="carousel-prev" aria-label="Previous Project">‹</button>
+          
+          <div class="projects-carousel-track-container">
+            <div class="projects-carousel" id="projects-carousel">
+              <!-- Dynamically Loaded from data/projects.json -->
+            </div>
+          </div>
+
+          <button class="carousel-arrow carousel-arrow-right" id="carousel-next" aria-label="Next Project">›</button>
+        </div>
+
+        <div class="carousel-dots" id="carousel-dots"></div>
+      </div>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section class="services-section" id="services">
+      <div class="section-container">
+        <div class="section-header center">
+          <span class="section-tag">WHAT I DO</span>
+          <h2 class="section-heading">Services I Offer</h2>
+        </div>
+
+        <div class="services-grid-4">
+          <!-- Service 1 -->
+          <div class="service-card">
+            <div class="service-icon-box">🎬</div>
+            <h3 class="service-name">AI Video Production</h3>
+            <p class="service-desc">
+              Crafting hyper-realistic AI visuals, custom prompts, and cinematic AI video workflows using Veo 3, Midjourney & ElevenLabs.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card">
+            <div class="service-icon-box">✂️</div>
+            <h3 class="service-name">Professional Video Editing</h3>
+            <p class="service-desc">
+              High-impact YouTube & brand edits focused on hooks, pacing, dynamic transitions, color grading & viewer retention.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card">
+            <div class="service-icon-box">🎨</div>
+            <h3 class="service-name">Motion Graphics Design</h3>
+            <p class="service-desc">
+              Custom 2D/3D kinetic typography, animated lower thirds, title reveals, and logo animations using After Effects.
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card">
+            <div class="service-icon-box">✍️</div>
+            <h3 class="service-name">Script Writing</h3>
+            <p class="service-desc">
+              Engaging script structure, video storytelling, and content strategy tailored to maximize viewer watch time and conversions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Tech Stack Section -->
+    <section class="tech-section" id="skills">
+      <div class="section-container">
+        <div class="section-header center">
+          <span class="section-tag">TECH STACK</span>
+          <h2 class="section-heading">Tools & Software I Master</h2>
+        </div>
+
+        <div class="tech-grid">
+          <div class="tech-card">
+            <div class="tech-badge pr">Pr</div>
+            <span class="tech-title">Premiere Pro</span>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-badge ae">Ae</div>
+            <span class="tech-title">After Effects</span>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-badge au">Au</div>
+            <span class="tech-title">Audition</span>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-badge veo">Veo</div>
+            <span class="tech-title">Google Flow Veo 3</span>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-badge dv">DVR</div>
+            <span class="tech-title">DaVinci Resolve</span>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-badge el">11</div>
+            <span class="tech-title">ElevenLabs</span>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-badge ps">Ps</div>
+            <span class="tech-title">Photoshop</span>
+          </div>
+
+          <div class="tech-card">
+            <div class="tech-badge mj">Mj</div>
+            <span class="tech-title">Midjourney</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Key Stats Section -->
+    <section class="stats-section" id="stats">
+      <div class="section-container">
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div class="stat-icon">🔴</div>
+            <div class="stat-val">321K+</div>
+            <div class="stat-lbl">Subscribers</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">👁️</div>
+            <div class="stat-val">118M+</div>
+            <div class="stat-lbl">Total Views</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-val">4+</div>
+            <div class="stat-lbl">Years Experience</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-val">100%</div>
+            <div class="stat-lbl">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Standalone About Section -->
+    <section class="about-section" id="about" style="padding: 100px 0 60px 0;">
+      <div class="section-container">
+        <div class="hero-about-row">
+          <!-- Left About Narrative -->
+          <div class="about-left">
+            <span class="section-tag">ABOUT ME</span>
+            <h2 class="section-heading">
+              I'm a video editor who loves crafting cinematic stories.
+            </h2>
+            <p class="about-bio">
+              I specialize in AI video production, professional editing and motion graphics. With a YouTube channel of 321K subscribers and 118M+ views, I understand what makes content perform — hooks, pacing, retention. I bring that same thinking to every project.
+            </p>
+            <div class="about-signature">
+              Shivam Jaiswal
+            </div>
+          </div>
+
+          <!-- Right 6 Info Cards Grid -->
+          <div class="about-right">
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="info-icon">👤</div>
+                <div class="info-content">
+                  <span class="info-label">Name</span>
+                  <span class="info-val">Shivam Jaiswal</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">⏳</div>
+                <div class="info-content">
+                  <span class="info-label">Experience</span>
+                  <span class="info-val">4+ Years</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">✉️</div>
+                <div class="info-content">
+                  <span class="info-label">Email</span>
+                  <span class="info-val">shivamjaiswal6267@gmail.com</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">📍</div>
+                <div class="info-content">
+                  <span class="info-label">Location</span>
+                  <span class="info-val">India</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">🔴</div>
+                <div class="info-content">
+                  <span class="info-label">YouTube</span>
+                  <span class="info-val">321K+ Subscribers</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <div class="info-icon">🚀</div>
+                <div class="info-content">
+                  <span class="info-label">Availability</span>
+                  <span class="info-val text-orange">Open to Work</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Stats Section -->
+    <section class="stats-section" id="stats">
+      <div class="section-container">
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div class="stat-icon">🔴</div>
+            <div class="stat-val">321K+</div>
+            <div class="stat-lbl">Subscribers</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">👁️</div>
+            <div class="stat-val">118M+</div>
+            <div class="stat-lbl">Total Views</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-val">4+</div>
+            <div class="stat-lbl">Years Experience</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-val">100%</div>
+            <div class="stat-lbl">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <section class="contact-section" id="contact">
+      <div class="section-container">
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <span class="section-tag">LET'S WORK TOGETHER</span>
+            <h2 class="section-heading">Get In Touch</h2>
+            <p class="contact-lead">
+              Have a video editing project, AI production, or motion graphics inquiry? Feel free to reach out anytime!
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div>
+                  <span class="contact-lbl">Email</span>
+                  <a href="mailto:shivamjaiswal6267@gmail.com" class="contact-link">shivamjaiswal6267@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                  <span class="contact-lbl">Phone / WhatsApp</span>
+                  <a href="tel:6267031972" class="contact-link">6267031972</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <span class="contact-lbl">Location</span>
+                  <span class="contact-val">India (Available Worldwide)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-box">
+            <form id="contact-form" class="contact-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name</label>
+                <input type="text" id="contact-name" placeholder="Enter your name" required class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="contact-service" class="form-label">What do you need?</label>
+                <select id="contact-service" required class="form-input form-select">
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="AI Video Production">AI Video Production</option>
+                  <option value="Video Editing">Video Editing</option>
+                  <option value="Script Writing">Script Writing</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Your Message</label>
+                <textarea id="contact-message" placeholder="Type your message here..." rows="4" required class="form-input"></textarea>
+              </div>
+              <button type="submit" class="btn-primary btn-full">
+                SEND MESSAGE 🚀
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#" class="brand-logo">
+              <span class="logo-icon">▲</span> SHIVAM<span class="text-orange">JAISWAL</span>
+            </a>
+            <p>Crafting cinematic AI videos & high-impact edits that convert.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>QUICK LINKS</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>FOLLOW ME</h4>
+            <div class="social-icons">
+              <a href="https://www.youtube.com/@p4prime" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">YT</a>
+              <a href="https://www.instagram.com/shivamjaiswaladp?igsi=aXZjaXFhYmw3bnR4" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">IG</a>
+              <a href="https://www.fiverr.com/s/xrdeeD4" target="_blank" rel="noopener noreferrer" class="social-link" title="Fiverr">
+                <img src="fiverr-logo.png" alt="Fiverr" class="footer-fiverr-img">
+              </a>
+              <a href="https://wa.me/916267031972" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp">WA</a>
+            </div>
+            <p class="text-orange subtext">Available for freelance work!</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>NEWSLETTER</h4>
+            <p>Subscribe for video editing breakdowns & AI prompts.</p>
+            <div class="newsletter-box">
+              <input type="email" placeholder="Enter your email">
+              <button class="btn-primary">🚀</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 Shivam Jaiswal. All rights reserved.</p>
+          <p>Made with ❤️ and high-performance smooth scroll canvas.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- View All Projects Modal Gallery -->
+    <div id="all-projects-modal" class="modal-overlay">
+      <div class="modal-container glass-panel">
+        <div class="modal-header-sticky">
+          <div class="modal-header">
+            <div>
+              <span class="section-tag">PORTFOLIO SHOWCASE</span>
+              <h2 class="modal-title">All Featured Projects</h2>
+            </div>
+            <button class="modal-close-btn" id="close-projects-modal-btn" aria-label="Close modal">✕</button>
+          </div>
+
+          <div class="modal-filters">
+            <button class="filter-tab active" data-filter="all">All Work</button>
+            <button class="filter-tab" data-filter="ai-video">AI Video</button>
+            <button class="filter-tab" data-filter="editing">Video Editing</button>
+            <button class="filter-tab" data-filter="motion">Motion Graphics</button>
+            <button class="filter-tab" data-filter="scripting">Script Writing</button>
+          </div>
+        </div>
+
+        <div class="modal-grid" id="modal-projects-grid">
+          <!-- Dynamically populated from data/projects.json -->
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion Modal -->
+    <div id="faq-modal" class="modal-overlay">
+      <div class="modal-container glass-panel faq-modal-container">
+        <div class="modal-header">
+          <div>
+            <span class="section-tag">FREQUENTLY ASKED QUESTIONS</span>
+            <h2 class="modal-title">Quick Questions & Answers</h2>
+          </div>
+          <button class="modal-close-btn" id="close-faq-btn" aria-label="Close FAQ modal">✕</button>
+        </div>
+
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What is AI Video Production?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>I create hyper-realistic AI generated videos using Google Flow Veo 3, Midjourney and ElevenLabs. The final output looks so real that viewers cannot tell it was made with AI.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What does Professional Video Editing include?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Full post-production editing in Adobe Premiere Pro and After Effects — cuts, transitions, color grading, sound design, motion graphics and captions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What is Motion Graphics Design?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Custom 2D/3D animated text, logo reveals, kinetic typography, lower thirds and visual effects created in After Effects and Photoshop.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What does Script Writing include?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>I write engaging video scripts with strong hooks, story structure and call to action — optimized for retention and conversions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How long does delivery take?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>AI Video (15 sec) — 3 days, AI Video (30 sec) — 4 days, AI Video (60 sec) — 7 days. Rush delivery available as add-on.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you work with international clients?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, I work with clients worldwide. Communication in English, delivery via Fiverr or direct.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I request revisions?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes — Basic plan: 3 revisions, Standard: 6 revisions, Premium: Unlimited revisions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience Timeline Modal -->
+    <div id="experience-modal" class="modal-overlay">
+      <div class="modal-container glass-panel experience-modal-container">
+        <div class="modal-header">
+          <div>
+            <span class="section-tag">MY JOURNEY & EXPERIENCE</span>
+            <h2 class="modal-title">4+ Years Career Timeline</h2>
+          </div>
+          <button class="modal-close-btn" id="close-experience-modal-btn" aria-label="Close timeline modal">✕</button>
+        </div>
+
+        <div class="timeline-scroll-area" id="timeline-scroll-area">
+          <div class="timeline-container">
+            <div class="timeline-track-bg">
+              <div class="timeline-track-fill" id="timeline-track-fill"></div>
+            </div>
+
+            <div class="timeline-items">
+              <div class="timeline-item" data-year="2021">
+                <div class="timeline-node">
+                  <span class="node-dot"></span>
+                </div>
+                <div class="timeline-content glass-panel">
+                  <span class="timeline-year-tag">2021</span>
+                  <h4 class="timeline-title">The Foundation</h4>
+                  <p>Started learning video editing from scratch.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-year="2022">
+                <div class="timeline-node">
+                  <span class="node-dot"></span>
+                </div>
+                <div class="timeline-content glass-panel">
+                  <span class="timeline-year-tag">2022</span>
+                  <h4 class="timeline-title">YouTube Channel Launch</h4>
+                  <p>Launched personal YouTube gaming channel, started editing and uploading gameplay videos.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-year="2023">
+                <div class="timeline-node">
+                  <span class="node-dot"></span>
+                </div>
+                <div class="timeline-content glass-panel">
+                  <span class="timeline-year-tag">2023</span>
+                  <h4 class="timeline-title">Local Commercial AI Ads</h4>
+                  <p>Started creating video ads for local businesses using video editing and ElevenLabs AI voiceover.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-year="2024">
+                <div class="timeline-node">
+                  <span class="node-dot"></span>
+                </div>
+                <div class="timeline-content glass-panel">
+                  <span class="timeline-year-tag">2024</span>
+                  <h4 class="timeline-title">100K Subscribers Milestone</h4>
+                  <p>Continued making ads for local businesses. Gaming YouTube channel reached 100K subscribers.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-year="2025">
+                <div class="timeline-node">
+                  <span class="node-dot"></span>
+                </div>
+                <div class="timeline-content glass-panel">
+                  <span class="timeline-year-tag">2025</span>
+                  <h4 class="timeline-title">300K+ Subscribers & Corporate Editing</h4>
+                  <p>Gaming channel crossed 300K subscribers. Started working with small companies.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item" data-year="2026">
+                <div class="timeline-node">
+                  <span class="node-dot"></span>
+                </div>
+                <div class="timeline-content glass-panel">
+                  <span class="timeline-year-tag">2026</span>
+                  <h4 class="timeline-title">Fiverr Global & Founded ADP Agency</h4>
+                  <p>Listed on Fiverr, started working with bigger companies worldwide, and founded ADP (Aapka Digital Partner) — a digital marketing agency.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Interactive Pricing & Packages Modal (Un-nested Root Modal) -->
+  <div id="pricing-modal" class="modal-overlay">
+    <div class="modal-container glass-panel">
+      <div class="modal-header-sticky">
+        <div class="modal-header">
+          <div>
+            <span class="section-tag text-orange">TRANSPARENT RATES</span>
+            <h2 class="modal-title">Pricing & Packages</h2>
+            <p class="pricing-modal-subtitle" style="color: var(--text-muted); font-size: 14px; margin-top: 4px;">High-ROI Video Ads Tailored for Brands & Creators</p>
+          </div>
+          <button class="modal-close-btn" id="close-pricing-modal-btn" aria-label="Close modal">✕</button>
+        </div>
+      </div>
+
+      <div class="pricing-cards-grid" style="padding: 28px 32px 48px 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        
+        <!-- Package 1: AI Video Ads -->
+        <div class="pricing-card package-card-ai" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 32px; margin-bottom: 8px;">🤖</div>
+            <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px;">AI Video Ads</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5;">Original Script + AI Characters + ElevenLabs Voiceover + Sound & Edit</p>
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+              <div style="display: flex; justify-content: space-between;"><span style="color: var(--text-muted);">Up to 30s:</span> <span style="font-weight: 800; color: var(--orange-primary);">₹500</span></div>
+              <div style="display: flex; justify-content: space-between;"><span style="color: var(--text-muted);">Up to 60s:</span> <span style="font-weight: 800; color: var(--orange-primary);">₹1,000</span></div>
+              <div style="display: flex; justify-content: space-between;"><span style="color: var(--text-muted);">Up to 90s:</span> <span style="font-weight: 800; color: var(--orange-primary);">₹1,500</span></div>
+            </div>
+          </div>
+          <button class="btn-primary pricing-cta-btn" data-service="AI Video Production" style="margin-top: 24px; width: 100%; justify-content: center;">
+            Custom Offer & More Info →
+          </button>
+        </div>
+
+        <!-- Package 2: Motion Graphics -->
+        <div class="pricing-card package-card-motion" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 32px; margin-bottom: 8px;">🎨</div>
+            <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px;">Motion Graphics</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5;">3D Typography + Kinetic VFX + Sound Design + Custom Script</p>
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+              <div style="display: flex; justify-content: space-between;"><span style="color: var(--text-muted);">Up to 30s:</span> <span style="font-weight: 800; color: var(--orange-primary);">₹1,000</span></div>
+              <div style="display: flex; justify-content: space-between;"><span style="color: var(--text-muted);">Up to 60s:</span> <span style="font-weight: 800; color: var(--orange-primary);">₹2,000</span></div>
+              <div style="display: flex; justify-content: space-between;"><span style="color: var(--text-muted);">Up to 90s:</span> <span style="font-weight: 800; color: var(--orange-primary);">₹3,000</span></div>
+            </div>
+          </div>
+          <button class="btn-primary pricing-cta-btn" data-service="Video Editing" style="margin-top: 24px; width: 100%; justify-content: center;">
+            Custom Offer & More Info →
+          </button>
+        </div>
+
+        <!-- Package 3: Footage Editing -->
+        <div class="pricing-card package-card-standard" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 32px; margin-bottom: 8px;">✂️</div>
+            <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px;">Footage Editing</h3>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5;">Pacing, Retention Hooks & Kinetic Subtitles for your raw footage</p>
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 14px;">
+              <div style="font-size: 26px; font-weight: 900; color: var(--orange-primary);">₹500 <span style="font-size: 13px; font-weight: 500; color: var(--text-muted);">/ minute</span></div>
+              <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">High retention style</p>
+            </div>
+          </div>
+          <button class="btn-primary pricing-cta-btn" data-service="Video Editing" style="margin-top: 24px; width: 100%; justify-content: center;">
+            Custom Offer & More Info →
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Locked Pricing Toast Notification Overlay -->
+  <div id="pricing-locked-toast" class="pricing-toast-overlay">
+    <div class="pricing-toast-content glass-panel">
+      <div class="pricing-toast-icon-box">🎬</div>
+      <div class="pricing-toast-text">
+        <p class="pricing-toast-hi">Price जानने के लिए कम से कम 1 वीडियो देखिए!</p>
+        <p class="pricing-toast-en">Please watch at least 1 project video below to unlock full pricing.</p>
+      </div>
+      <button id="close-pricing-toast-btn" class="pricing-toast-close" aria-label="Close notification">✕</button>
+    </div>
+  </div>
+
+  <!-- In-Website Cinema Lightbox Video Player Modal (Rendered at body root) -->
+  <div id="cinema-video-modal" class="modal-overlay cinema-modal-overlay">
+    <div class="cinema-modal-container">
+      <button class="cinema-close-btn" id="close-cinema-modal-btn" aria-label="Close video">✕</button>
+      <div class="cinema-video-wrapper">
+        <iframe id="cinema-iframe" src="" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js?v=5.0"></script>
+</body>
+</html>
