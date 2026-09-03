@@ -321,6 +321,8 @@
       const formattedText = `Hi Shivam, my name is ${name}. I need help with: ${service}. Message: ${message}`;
       const whatsappUrl = `https://wa.me/916267031972?text=${encodeURIComponent(formattedText)}`;
 
+      if (window.gtag) gtag('event', 'contact_click', { event_category: 'Conversion', method: 'WhatsApp' });
+
       window.open(whatsappUrl, '_blank');
     });
   }
@@ -487,6 +489,8 @@
       cinemaIframe.src = 'https://www.youtube.com/embed/' + youtubeId + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
       cinemaModal.classList.add('active');
       lockBodyScroll();
+
+      if (window.gtag) gtag('event', 'video_play', { event_category: 'Portfolio', video_id: youtubeId });
 
       // Unlock pricing upon watching video
       localStorage.setItem('hasWatchedVideo', 'true');
@@ -753,6 +757,7 @@
     function openModal() {
       modal.classList.add('active');
       lockBodyScroll();
+      if (window.gtag) gtag('event', 'view_all_projects', { event_category: 'Portfolio' });
     }
 
     function closeModal() {
@@ -867,6 +872,7 @@
         e.preventDefault();
         projectsModal.classList.add('active');
         lockBodyScroll();
+        if (window.gtag) gtag('event', 'view_all_projects', { event_category: 'Portfolio' });
       });
     }
   }
@@ -1009,6 +1015,7 @@
       pricingModal.style.visibility = 'visible';
       pricingModal.style.pointerEvents = 'auto';
       lockBodyScroll();
+      if (window.gtag) gtag('event', 'pricing_view', { event_category: 'Engagement' });
     }
 
     function closePricingModal() {
@@ -1167,6 +1174,7 @@
         if (modal) {
           modal.classList.add('active');
           lockBodyScroll();
+          if (window.gtag) gtag('event', 'view_all_projects', { event_category: 'Portfolio' });
         }
         return;
       }
