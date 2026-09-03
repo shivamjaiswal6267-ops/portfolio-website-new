@@ -102,23 +102,6 @@
       targetMouseY = (e.clientY / window.innerHeight) * 2 - 1;
     }, { passive: true });
 
-    // Touchmove listener (Mobile)
-    window.addEventListener('touchmove', (e) => {
-      if (e.touches && e.touches.length > 0) {
-        const touch = e.touches[0];
-        targetMouseX = (touch.clientX / window.innerWidth) * 2 - 1;
-        targetMouseY = (touch.clientY / window.innerHeight) * 2 - 1;
-      }
-    }, { passive: true });
-
-    // Device orientation (Mobile Gyroscope)
-    window.addEventListener('deviceorientation', (e) => {
-      if (e.gamma !== null && e.beta !== null) {
-        targetMouseX = Math.max(-1, Math.min(1, e.gamma / 25));
-        targetMouseY = Math.max(-1, Math.min(1, (e.beta - 45) / 25));
-      }
-    }, { passive: true });
-
     // Scroll listener
     window.addEventListener('scroll', () => {
       targetScrollY = window.scrollY || window.pageYOffset || 0;
@@ -980,8 +963,8 @@
           widgetBadge.textContent = 'Unlocked';
           widgetBadge.className = 'pricing-widget-status-badge unlocked';
         }
-        if (widgetTitle) widgetTitle.textContent = '🔓 Pricing & Packages (Unlocked)';
-        if (widgetSubtext) widgetSubtext.textContent = 'Click to view service rates';
+        if (widgetTitle) widgetTitle.textContent = '🔓 PRICING';
+        if (widgetSubtext) widgetSubtext.textContent = 'Instant Access';
         if (widgetCounter) widgetCounter.textContent = '1/1 Unlocked';
       } else {
         pricingWidget.classList.remove('unlocked');
@@ -991,8 +974,8 @@
           widgetBadge.textContent = 'Locked';
           widgetBadge.className = 'pricing-widget-status-badge locked';
         }
-        if (widgetTitle) widgetTitle.textContent = '🔒 Check Pricing & Rates (Locked)';
-        if (widgetSubtext) widgetSubtext.textContent = 'Watch 1 video to unlock rates';
+        if (widgetTitle) widgetTitle.textContent = '🔒 PRICING';
+        if (widgetSubtext) widgetSubtext.textContent = 'Watch 1 video to unlock';
         if (widgetCounter) widgetCounter.textContent = '0/1 Videos Watched';
       }
     }

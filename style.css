@@ -2910,6 +2910,45 @@ html, body {
    MOBILE GPU OPTIMIZATION & FLICKER/CLIPPING RECTANGLE ELIMINATION (< 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  /* Disable continuous GPU repaint animations for Pricing Widget */
+  .hero-pricing-widget,
+  .hero-pricing-widget.locked,
+  .hero-pricing-widget.unlocked {
+    animation: none !important;
+  }
+
+  .hero-pricing-widget.locked {
+    border: 1.5px solid rgba(249, 115, 22, 0.5) !important;
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.25), 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .hero-pricing-widget.unlocked {
+    border: 1.5px solid rgba(16, 185, 129, 0.6) !important;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* Disable heavy backdrop-filter on mobile cards */
+  .project-card,
+  .service-card,
+  .tech-card,
+  .info-card,
+  .hero-pricing-widget {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #121216 !important;
+  }
+
+  /* Next-Gen Rendering Optimization for off-screen sections */
+  .services-section,
+  .tech-section,
+  .stats-section,
+  .about-section,
+  .contact-section,
+  .footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
+  }
+
   /* Prevent GPU compositing tile crashes by adding hardware acceleration properties */
   .fixed-parallax-stage,
   .hero-face-img,
@@ -2920,21 +2959,13 @@ html, body {
     -webkit-backface-visibility: hidden;
   }
 
-  /* Optimize mobile glassmorphism cards: Replace heavy backdrop-filter blur with lightweight blur */
-  .glass-panel,
-  .project-card,
-  .service-card,
-  .stat-card,
-  .about-card,
-  .pricing-card,
-  .hero-pricing-widget,
-  .pricing-toast-content,
-  .hero-subrole-badge,
+  /* Smooth Native Touch Momentum */
+  body,
+  .projects-carousel-track-container,
   .modal-container,
-  .navbar {
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    background: rgba(18, 18, 20, 0.92) !important;
+  .timeline-scroll-area,
+  .modal-filters {
+    -webkit-overflow-scrolling: touch;
   }
 
   /* Ensure hero left/right columns and background portrait do not overlap into conflicting clipping layers */
