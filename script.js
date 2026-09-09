@@ -20,12 +20,14 @@
   let mouseX = 0, mouseY = 0;
   let targetMouseX = 0, targetMouseY = 0;
   let scrollY = 0, targetScrollY = 0;
+  let lenisInstance = null;
 
   // Scroll Lock Helpers for Modals (Prevents Background Body Scroll Leak & iPhone Safari Freeze)
   function lockBodyScroll() {
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
     document.body.style.touchAction = 'none';
+    if (lenisInstance) lenisInstance.stop();
   }
 
   function unlockBodyScroll() {
@@ -34,6 +36,7 @@
       document.body.style.overflow = '';
       document.documentElement.style.overflow = '';
       document.body.style.touchAction = '';
+      if (lenisInstance) lenisInstance.start();
     }
   }
 
@@ -390,6 +393,26 @@
       "youtubeId": "bACz4j1bdJg",
       "thumbnail": "public/images/kmr-wholesale.jpg",
       "tags": ["AI Commercial", "Premiere Pro", "Compositing", "E-commerce"]
+    },
+    {
+      "id": 7,
+      "title": "NEW KMR App Walkthrough & Tutorial",
+      "category": "TUTORIAL & MOTION",
+      "categorySlug": "motion editing",
+      "description": "High-impact compact app tutorial with custom script, ElevenLabs voiceover, engaging pacing, and clear CTA breakdown.",
+      "youtubeId": "aNH3TN466LU",
+      "thumbnail": "https://img.youtube.com/vi/aNH3TN466LU/maxresdefault.jpg",
+      "tags": ["App Tutorial", "ElevenLabs", "Premiere Pro", "Scriptwriting"]
+    },
+    {
+      "id": 8,
+      "title": "Scholarship Promotion — AI Short Film",
+      "category": "AI SHORT FILM",
+      "categorySlug": "ai-video scripting editing",
+      "description": "Full AI-generated promotional short film for Shubh Computer Education. Custom script, AI character synthesis, ElevenLabs voiceover, and sound design.",
+      "youtubeId": "ovGpENKV_Yc",
+      "thumbnail": "public/images/scholarship-promotion-ai.jpg",
+      "tags": ["AI Short Film", "Promotion", "Scriptwriting", "Voiceover"]
     }
   ];
 
@@ -757,13 +780,18 @@
     function openModal() {
       modal.classList.add('active');
       lockBodyScroll();
+      if (lenisInstance) lenisInstance.stop();
       if (window.gtag) gtag('event', 'view_all_projects', { event_category: 'Portfolio' });
     }
 
     function closeModal() {
       modal.classList.remove('active');
       unlockBodyScroll();
+      if (lenisInstance) lenisInstance.start();
     }
+
+    window.openProjectsModal = openModal;
+    window.closeModal = closeModal;
 
     if (openBtn) openBtn.addEventListener('click', openModal);
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -1015,6 +1043,7 @@
       pricingModal.style.visibility = 'visible';
       pricingModal.style.pointerEvents = 'auto';
       lockBodyScroll();
+      if (lenisInstance) lenisInstance.stop();
       if (window.gtag) gtag('event', 'pricing_view', { event_category: 'Engagement' });
     }
 
@@ -1026,6 +1055,7 @@
       pricingModal.style.visibility = '';
       pricingModal.style.pointerEvents = '';
       unlockBodyScroll();
+      if (lenisInstance) lenisInstance.start();
     }
 
     // Expose openPricingModal globally
@@ -1114,8 +1144,6 @@
   // =========================================================================
   // LENIS SMOOTH SCROLL ENGINE (DESKTOP ONLY — DISABLED ON MOBILE TOUCH)
   // =========================================================================
-  let lenisInstance = null;
-
   function initLenisScroll() {
     if (!isMobile && typeof Lenis !== 'undefined') {
       if (!lenisInstance) {
@@ -1225,21 +1253,13 @@
       if (e.target.closest('.modal-close-btn') || e.target.closest('#close-cinema-modal-btn') || e.target.closest('#close-pricing-toast-btn')) {
         e.preventDefault();
         e.stopPropagation();
-        document.querySelectorAll('.modal-overlay, .cinema-modal-overlay, .pricing-toast-overlay').forEach(m => m.classList.remove('active'));
-        const iframe = document.getElementById('cinema-iframe');
-        if (iframe) iframe.src = '';
-        unlockBodyScroll();
+        closeAllModals();
         return;
       }
 
       // 7. Click Outside Container (Modal Overlay Backdrop Click)
       if (e.target.classList.contains('modal-overlay') || e.target.classList.contains('cinema-modal-overlay')) {
-        e.target.classList.remove('active');
-        if (e.target.id === 'cinema-video-modal') {
-          const iframe = document.getElementById('cinema-iframe');
-          if (iframe) iframe.src = '';
-        }
-        unlockBodyScroll();
+        closeAllModals();
         return;
       }
     });
@@ -1247,13 +1267,19 @@
     // 8. Global ESC Key Listener
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        document.querySelectorAll('.modal-overlay.active, .cinema-modal-overlay.active, .pricing-toast-overlay.active').forEach(m => m.classList.remove('active'));
-        const iframe = document.getElementById('cinema-iframe');
-        if (iframe) iframe.src = '';
-        unlockBodyScroll();
+        closeAllModals();
       }
     });
   }
+
+  function closeAllModals() {
+    document.querySelectorAll('.modal-overlay.active, .cinema-modal-overlay.active, .pricing-toast-overlay.active').forEach(m => m.classList.remove('active'));
+    const iframe = document.getElementById('cinema-iframe');
+    if (iframe) iframe.src = '';
+    unlockBodyScroll();
+    if (lenisInstance) lenisInstance.start();
+  }
+  window.closeAllModals = closeAllModals;
 
   function setupFeatures() {
     initGlobalModalDelegation();

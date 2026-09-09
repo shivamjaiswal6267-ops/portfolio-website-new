@@ -52,5 +52,25 @@
     "youtubeId": "bACz4j1bdJg",
     "thumbnail": "public/images/kmr-wholesale.jpg",
     "tags": ["AI Commercial", "Premiere Pro", "Compositing", "E-commerce"]
+  },
+  {
+    "id": 7,
+    "title": "NEW KMR App Walkthrough & Tutorial",
+    "category": "TUTORIAL & MOTION",
+    "categorySlug": "motion editing",
+    "description": "High-impact compact app tutorial with custom script, ElevenLabs voiceover, engaging pacing, and clear CTA breakdown.",
+    "youtubeId": "aNH3TN466LU",
+    "thumbnail": "https://img.youtube.com/vi/aNH3TN466LU/maxresdefault.jpg",
+    "tags": ["App Tutorial", "ElevenLabs", "Premiere Pro", "Scriptwriting"]
+  },
+  {
+    "id": 8,
+    "title": "Scholarship Promotion — AI Short Film",
+    "category": "AI SHORT FILM",
+    "categorySlug": "ai-video scripting editing",
+    "description": "Full AI-generated promotional short film for Shubh Computer Education. Custom script, AI character synthesis, ElevenLabs voiceover, and sound design.",
+    "youtubeId": "ovGpENKV_Yc",
+    "thumbnail": "public/images/scholarship-promotion-ai.jpg",
+    "tags": ["AI Short Film", "Promotion", "Scriptwriting", "Voiceover"]
   }
 ]
