@@ -1,26 +1,29 @@
 [
   {
     "id": 1,
-    "title": "Complete App Masterclass & Motion Design",
-    "category": "TUTORIAL & MOTION",
-    "description": "Comprehensive app tutorial featuring high-impact screen recording, custom After Effects motion graphics, original voiceover, and engaging CTA pacing.",
-    "youtubeId": "HRAMQcXxt9I",
-    "thumbnail": "https://img.youtube.com/vi/HRAMQcXxt9I/maxresdefault.jpg",
-    "tags": ["After Effects", "Motion Graphics", "Voiceover", "AI Video"]
+    "title": "Ai Commercial Reel For vintage combo brand | info reel.",
+    "category": "AI COMMERCIAL",
+    "categorySlug": "ai-video editing",
+    "description": "High-converting AI commercial reel crafted for vintage combo brand with dynamic product pacing, custom sound design, and viral retention.",
+    "youtubeId": "H0g3pCASyz4",
+    "thumbnail": "public/images/ai-commercial-1.jpg",
+    "tags": ["AI Commercial", "Premiere Pro", "Branding", "Reel"]
   },
   {
     "id": 2,
-    "title": "High-Converting AI Commercial Showreel",
+    "title": "Talking head simple Reel",
     "category": "AI COMMERCIAL",
-    "description": "100% AI-generated commercial video crafted for client gigs. Scriptwriting, ElevenLabs cinematic voiceover, custom prompt engineering, and Premiere Pro mastering.",
-    "youtubeId": "ckwfOdij-uQ",
-    "thumbnail": "https://img.youtube.com/vi/ckwfOdij-uQ/maxresdefault.jpg",
-    "tags": ["AI Video", "Premiere Pro", "ElevenLabs", "Commercial"]
+    "categorySlug": "ai-video editing",
+    "description": "Clean, engaging AI talking head reel with retention-focused editing, synchronized kinetic captions, and seamless audio enhancement.",
+    "youtubeId": "cIppQuO4TdE",
+    "thumbnail": "public/images/ai-commercial-2.jpg",
+    "tags": ["AI Talking Head", "Reels", "Video Editing", "Content"]
   },
   {
     "id": 3,
     "title": "WhatsApp AI Cinematic Short Film",
     "category": "AI SHORT FILM",
+    "categorySlug": "ai-video scripting editing",
     "description": "Story-driven AI short film utilizing full AI workflow generation, custom cinematic narrative, character consistency, and sound design in Premiere Pro.",
     "youtubeId": "VJKznoS4TIo",
     "thumbnail": "https://img.youtube.com/vi/VJKznoS4TIo/maxresdefault.jpg",
@@ -28,33 +31,6 @@
   },
   {
     "id": 4,
-    "title": "KJSST Mobile Finance — AI Short Film",
-    "category": "AI SHORT FILM",
-    "description": "Full AI-generated narrative commercial. Concept, scriptwriting, AI character synthesis, Premiere Pro editing, and After Effects sound design.",
-    "youtubeId": "RmndE-qelJ8",
-    "thumbnail": "public/images/kjsst-mobile-finance.jpg",
-    "tags": ["AI Short Film", "Premiere Pro", "After Effects", "Direction"]
-  },
-  {
-    "id": 5,
-    "title": "Breaking Bad Inspired Fashion Montage",
-    "category": "MOTION GRAPHICS",
-    "description": "13-second high-energy kinetic intro & fashion montage for New Kumar Collection. Custom typography, 3D motion graphics, and chemical VFX in After Effects.",
-    "youtubeId": "XOiF_tvb0xo",
-    "thumbnail": "public/images/breaking-bad-montage.jpg",
-    "tags": ["After Effects", "Motion Graphics", "Typography", "VFX"]
-  },
-  {
-    "id": 6,
-    "title": "Offline vs Online Shopping — KMR Commercial",
-    "category": "AI COMMERCIAL",
-    "description": "High-impact commercial video for KMR Wholesale Electronics. AI image synthesis, product compositing, dynamic typography, and pacing.",
-    "youtubeId": "bACz4j1bdJg",
-    "thumbnail": "public/images/kmr-wholesale.jpg",
-    "tags": ["AI Commercial", "Premiere Pro", "Compositing", "E-commerce"]
-  },
-  {
-    "id": 7,
     "title": "NEW KMR App Walkthrough & Tutorial",
     "category": "TUTORIAL & MOTION",
     "categorySlug": "motion editing",
@@ -64,7 +40,7 @@
     "tags": ["App Tutorial", "ElevenLabs", "Premiere Pro", "Scriptwriting"]
   },
   {
-    "id": 8,
+    "id": 5,
     "title": "Scholarship Promotion — AI Short Film",
     "category": "AI SHORT FILM",
     "categorySlug": "ai-video scripting editing",
@@ -72,5 +48,65 @@
     "youtubeId": "ovGpENKV_Yc",
     "thumbnail": "public/images/scholarship-promotion-ai.jpg",
     "tags": ["AI Short Film", "Promotion", "Scriptwriting", "Voiceover"]
+  },
+  {
+    "id": 6,
+    "title": "Why Ai commercial is important for you? About my service",
+    "category": "AI COMMERCIAL",
+    "categorySlug": "ai-video editing",
+    "description": "Comprehensive breakdown of high-converting AI commercial advantages for businesses, brand storytelling, and full-funnel advertisement mastery.",
+    "youtubeId": "ZQwVLIkF0cQ",
+    "thumbnail": "public/images/gig-showreel.jpg",
+    "tags": ["AI Commercial", "Showreel", "Client Service", "Voiceover"]
+  },
+  {
+    "id": 7,
+    "title": "Complete App Masterclass & Motion Design",
+    "category": "TUTORIAL & MOTION",
+    "categorySlug": "motion editing ai-video",
+    "description": "Comprehensive app tutorial featuring high-impact screen recording, custom After Effects motion graphics, original voiceover, and engaging CTA pacing.",
+    "youtubeId": "HRAMQcXxt9I",
+    "thumbnail": "https://img.youtube.com/vi/HRAMQcXxt9I/maxresdefault.jpg",
+    "tags": ["After Effects", "Motion Graphics", "Voiceover", "AI Video"]
+  },
+  {
+    "id": 8,
+    "title": "High-Converting AI Commercial Showreel",
+    "category": "AI COMMERCIAL",
+    "categorySlug": "ai-video editing",
+    "description": "100% AI-generated commercial video crafted for client gigs. Scriptwriting, ElevenLabs cinematic voiceover, custom prompt engineering, and Premiere Pro mastering.",
+    "youtubeId": "ckwfOdij-uQ",
+    "thumbnail": "https://img.youtube.com/vi/ckwfOdij-uQ/maxresdefault.jpg",
+    "tags": ["AI Video", "Premiere Pro", "ElevenLabs", "Commercial"]
+  },
+  {
+    "id": 9,
+    "title": "KJSST Mobile Finance — AI Short Film",
+    "category": "AI SHORT FILM",
+    "categorySlug": "ai-video scripting editing",
+    "description": "Full AI-generated narrative commercial. Concept, scriptwriting, AI character synthesis, Premiere Pro editing, and After Effects sound design.",
+    "youtubeId": "RmndE-qelJ8",
+    "thumbnail": "public/images/kjsst-mobile-finance.jpg",
+    "tags": ["AI Short Film", "Premiere Pro", "After Effects", "Direction"]
+  },
+  {
+    "id": 10,
+    "title": "Breaking Bad Inspired Fashion Montage",
+    "category": "MOTION GRAPHICS",
+    "categorySlug": "motion editing",
+    "description": "13-second high-energy kinetic intro & fashion montage for New Kumar Collection. Custom typography, 3D motion graphics, and chemical VFX in After Effects.",
+    "youtubeId": "XOiF_tvb0xo",
+    "thumbnail": "public/images/breaking-bad-montage.jpg",
+    "tags": ["After Effects", "Motion Graphics", "Typography", "VFX"]
+  },
+  {
+    "id": 11,
+    "title": "Offline vs Online Shopping — KMR Commercial",
+    "category": "AI COMMERCIAL",
+    "categorySlug": "ai-video editing",
+    "description": "High-impact commercial video for KMR Wholesale Electronics. AI image synthesis, product compositing, dynamic typography, and pacing.",
+    "youtubeId": "bACz4j1bdJg",
+    "thumbnail": "public/images/kmr-wholesale.jpg",
+    "tags": ["AI Commercial", "Premiere Pro", "Compositing", "E-commerce"]
   }
 ]

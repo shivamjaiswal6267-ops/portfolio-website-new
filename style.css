@@ -659,6 +659,140 @@ body {
   gap: 16px;
 }
 
+/* --------------------------------------------------------------------------
+   Hero Gig Video Showcase (16:9 Featured Showcase Card)
+   -------------------------------------------------------------------------- */
+.hero-gig-showcase {
+  margin: 0 0 28px 0;
+  width: 100%;
+  max-width: 580px;
+  background: rgba(14, 14, 18, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 107, 0, 0.4);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 24px rgba(255, 107, 0, 0.18);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.hero-gig-showcase:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 107, 0, 0.85);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 35px rgba(255, 107, 0, 0.4);
+}
+
+.hero-gig-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #09090d;
+}
+
+.hero-gig-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-gig-showcase:hover .hero-gig-thumb {
+  transform: scale(1.04);
+}
+
+.hero-gig-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.85) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Center Animated Neon Button */
+.hero-neon-watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 26px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  background: rgba(10, 10, 14, 0.88);
+  border: 1.5px solid #ff6b00;
+  border-radius: 999px;
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.65), inset 0 0 10px rgba(255, 107, 0, 0.3);
+  text-shadow: 0 0 8px rgba(255, 107, 0, 0.8);
+  cursor: pointer;
+  pointer-events: auto;
+  animation: neonWatchPulse 2.4s ease-in-out infinite;
+  transition: all 0.25s ease;
+}
+
+.hero-neon-watch-btn:hover {
+  background: #ff6b00;
+  color: #000000;
+  border-color: #ffa05c;
+  box-shadow: 0 0 35px rgba(255, 107, 0, 0.95), inset 0 0 15px rgba(255, 255, 255, 0.7);
+  text-shadow: none;
+  transform: scale(1.05);
+}
+
+.neon-play-icon {
+  font-size: 11px;
+  color: #ff8533;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.hero-neon-watch-btn:hover .neon-play-icon {
+  color: #000000;
+  transform: translateX(3px);
+}
+
+@keyframes neonWatchPulse {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(255, 107, 0, 0.55), inset 0 0 8px rgba(255, 107, 0, 0.25);
+    border-color: rgba(255, 107, 0, 0.75);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 107, 0, 0.9), inset 0 0 14px rgba(255, 107, 0, 0.5);
+    border-color: #ffa05c;
+  }
+}
+
+.hero-gig-info {
+  padding: 14px 18px 16px 18px;
+  background: rgba(14, 14, 20, 0.96);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-gig-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--orange-primary);
+  letter-spacing: 1px;
+}
+
+.hero-gig-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.4;
+  margin: 0;
+}
+
 .social-label {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -1673,7 +1807,7 @@ select.form-input option[disabled] {
   width: 100%;
   max-width: 1100px;
   max-height: 85vh;
-  overflow-y: auto;
+  overflow-y: auto !important;
   -webkit-overflow-scrolling: touch !important;
   overscroll-behavior: contain !important;
   touch-action: pan-y !important;
@@ -2910,10 +3044,11 @@ html, body {
    MOBILE GPU OPTIMIZATION & FLICKER/CLIPPING RECTANGLE ELIMINATION (< 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  /* Disable continuous GPU repaint animations for Pricing Widget */
+  /* Disable continuous GPU repaint animations for Pricing Widget & Neon Watch Button */
   .hero-pricing-widget,
   .hero-pricing-widget.locked,
-  .hero-pricing-widget.unlocked {
+  .hero-pricing-widget.unlocked,
+  .hero-neon-watch-btn {
     animation: none !important;
   }
 
@@ -2932,10 +3067,16 @@ html, body {
   .service-card,
   .tech-card,
   .info-card,
-  .hero-pricing-widget {
+  .hero-pricing-widget,
+  .hero-gig-showcase {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     background: #121216 !important;
+  }
+
+  .hero-gig-showcase {
+    max-width: 100%;
+    margin: 0 auto 24px auto;
   }
 
   /* Next-Gen Rendering Optimization for off-screen sections */
@@ -2952,7 +3093,8 @@ html, body {
   /* Prevent GPU compositing tile crashes by adding hardware acceleration properties */
   .fixed-parallax-stage,
   .hero-face-img,
-  .hero-pricing-widget {
+  .hero-pricing-widget,
+  .hero-gig-showcase {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     backface-visibility: hidden;

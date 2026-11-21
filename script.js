@@ -336,23 +336,23 @@
   const defaultProjectsData = [
     {
       "id": 1,
-      "title": "Complete App Masterclass & Motion Design",
-      "category": "TUTORIAL & MOTION",
-      "categorySlug": "motion editing ai-video",
-      "description": "Comprehensive app tutorial featuring high-impact screen recording, custom After Effects motion graphics, original voiceover, and engaging CTA pacing.",
-      "youtubeId": "HRAMQcXxt9I",
-      "thumbnail": "https://img.youtube.com/vi/HRAMQcXxt9I/maxresdefault.jpg",
-      "tags": ["After Effects", "Motion Graphics", "Voiceover", "AI Video"]
+      "title": "Ai Commercial Reel For vintage combo brand | info reel.",
+      "category": "AI COMMERCIAL",
+      "categorySlug": "ai-video editing",
+      "description": "High-converting AI commercial reel crafted for vintage combo brand with dynamic product pacing, custom sound design, and viral retention.",
+      "youtubeId": "H0g3pCASyz4",
+      "thumbnail": "public/images/ai-commercial-1.jpg",
+      "tags": ["AI Commercial", "Premiere Pro", "Branding", "Reel"]
     },
     {
       "id": 2,
-      "title": "High-Converting AI Commercial Showreel",
+      "title": "Talking head simple Reel",
       "category": "AI COMMERCIAL",
       "categorySlug": "ai-video editing",
-      "description": "100% AI-generated commercial video crafted for client gigs. Scriptwriting, ElevenLabs cinematic voiceover, custom prompt engineering, and Premiere Pro mastering.",
-      "youtubeId": "ckwfOdij-uQ",
-      "thumbnail": "https://img.youtube.com/vi/ckwfOdij-uQ/maxresdefault.jpg",
-      "tags": ["AI Video", "Premiere Pro", "ElevenLabs", "Commercial"]
+      "description": "Clean, engaging AI talking head reel with retention-focused editing, synchronized kinetic captions, and seamless audio enhancement.",
+      "youtubeId": "cIppQuO4TdE",
+      "thumbnail": "public/images/ai-commercial-2.jpg",
+      "tags": ["AI Talking Head", "Reels", "Video Editing", "Content"]
     },
     {
       "id": 3,
@@ -366,36 +366,6 @@
     },
     {
       "id": 4,
-      "title": "KJSST Mobile Finance — AI Short Film",
-      "category": "AI SHORT FILM",
-      "categorySlug": "ai-video scripting editing",
-      "description": "Full AI-generated narrative commercial. Concept, scriptwriting, AI character synthesis, Premiere Pro editing, and After Effects sound design.",
-      "youtubeId": "RmndE-qelJ8",
-      "thumbnail": "public/images/kjsst-mobile-finance.jpg",
-      "tags": ["AI Short Film", "Premiere Pro", "After Effects", "Direction"]
-    },
-    {
-      "id": 5,
-      "title": "Breaking Bad Inspired Fashion Montage",
-      "category": "MOTION GRAPHICS",
-      "categorySlug": "motion editing",
-      "description": "13-second high-energy kinetic intro & fashion montage for New Kumar Collection. Custom typography, 3D motion graphics, and chemical VFX in After Effects.",
-      "youtubeId": "XOiF_tvb0xo",
-      "thumbnail": "public/images/breaking-bad-montage.jpg",
-      "tags": ["After Effects", "Motion Graphics", "Typography", "VFX"]
-    },
-    {
-      "id": 6,
-      "title": "Offline vs Online Shopping — KMR Commercial",
-      "category": "AI COMMERCIAL",
-      "categorySlug": "ai-video editing",
-      "description": "High-impact commercial video for KMR Wholesale Electronics. AI image synthesis, product compositing, dynamic typography, and pacing.",
-      "youtubeId": "bACz4j1bdJg",
-      "thumbnail": "public/images/kmr-wholesale.jpg",
-      "tags": ["AI Commercial", "Premiere Pro", "Compositing", "E-commerce"]
-    },
-    {
-      "id": 7,
       "title": "NEW KMR App Walkthrough & Tutorial",
       "category": "TUTORIAL & MOTION",
       "categorySlug": "motion editing",
@@ -405,7 +375,7 @@
       "tags": ["App Tutorial", "ElevenLabs", "Premiere Pro", "Scriptwriting"]
     },
     {
-      "id": 8,
+      "id": 5,
       "title": "Scholarship Promotion — AI Short Film",
       "category": "AI SHORT FILM",
       "categorySlug": "ai-video scripting editing",
@@ -413,6 +383,66 @@
       "youtubeId": "ovGpENKV_Yc",
       "thumbnail": "public/images/scholarship-promotion-ai.jpg",
       "tags": ["AI Short Film", "Promotion", "Scriptwriting", "Voiceover"]
+    },
+    {
+      "id": 6,
+      "title": "Why Ai commercial is important for you? About my service",
+      "category": "AI COMMERCIAL",
+      "categorySlug": "ai-video editing",
+      "description": "Comprehensive breakdown of high-converting AI commercial advantages for businesses, brand storytelling, and full-funnel advertisement mastery.",
+      "youtubeId": "ZQwVLIkF0cQ",
+      "thumbnail": "public/images/gig-showreel.jpg",
+      "tags": ["AI Commercial", "Showreel", "Client Service", "Voiceover"]
+    },
+    {
+      "id": 7,
+      "title": "Complete App Masterclass & Motion Design",
+      "category": "TUTORIAL & MOTION",
+      "categorySlug": "motion editing ai-video",
+      "description": "Comprehensive app tutorial featuring high-impact screen recording, custom After Effects motion graphics, original voiceover, and engaging CTA pacing.",
+      "youtubeId": "HRAMQcXxt9I",
+      "thumbnail": "https://img.youtube.com/vi/HRAMQcXxt9I/maxresdefault.jpg",
+      "tags": ["After Effects", "Motion Graphics", "Voiceover", "AI Video"]
+    },
+    {
+      "id": 8,
+      "title": "High-Converting AI Commercial Showreel",
+      "category": "AI COMMERCIAL",
+      "categorySlug": "ai-video editing",
+      "description": "100% AI-generated commercial video crafted for client gigs. Scriptwriting, ElevenLabs cinematic voiceover, custom prompt engineering, and Premiere Pro mastering.",
+      "youtubeId": "ckwfOdij-uQ",
+      "thumbnail": "https://img.youtube.com/vi/ckwfOdij-uQ/maxresdefault.jpg",
+      "tags": ["AI Video", "Premiere Pro", "ElevenLabs", "Commercial"]
+    },
+    {
+      "id": 9,
+      "title": "KJSST Mobile Finance — AI Short Film",
+      "category": "AI SHORT FILM",
+      "categorySlug": "ai-video scripting editing",
+      "description": "Full AI-generated narrative commercial. Concept, scriptwriting, AI character synthesis, Premiere Pro editing, and After Effects sound design.",
+      "youtubeId": "RmndE-qelJ8",
+      "thumbnail": "public/images/kjsst-mobile-finance.jpg",
+      "tags": ["AI Short Film", "Premiere Pro", "After Effects", "Direction"]
+    },
+    {
+      "id": 10,
+      "title": "Breaking Bad Inspired Fashion Montage",
+      "category": "MOTION GRAPHICS",
+      "categorySlug": "motion editing",
+      "description": "13-second high-energy kinetic intro & fashion montage for New Kumar Collection. Custom typography, 3D motion graphics, and chemical VFX in After Effects.",
+      "youtubeId": "XOiF_tvb0xo",
+      "thumbnail": "public/images/breaking-bad-montage.jpg",
+      "tags": ["After Effects", "Motion Graphics", "Typography", "VFX"]
+    },
+    {
+      "id": 11,
+      "title": "Offline vs Online Shopping — KMR Commercial",
+      "category": "AI COMMERCIAL",
+      "categorySlug": "ai-video editing",
+      "description": "High-impact commercial video for KMR Wholesale Electronics. AI image synthesis, product compositing, dynamic typography, and pacing.",
+      "youtubeId": "bACz4j1bdJg",
+      "thumbnail": "public/images/kmr-wholesale.jpg",
+      "tags": ["AI Commercial", "Premiere Pro", "Compositing", "E-commerce"]
     }
   ];
 
@@ -476,8 +506,20 @@
     const modalGridEl = document.getElementById('modal-projects-grid');
 
     if (carouselEl) {
+      // Curate carousel to strictly 5 selected videos
+      const carouselVideoIds = [
+        'H0g3pCASyz4',
+        'cIppQuO4TdE',
+        'VJKznoS4TIo',
+        'aNH3TN466LU',
+        'ovGpENKV_Yc'
+      ];
+      const carouselItems = carouselVideoIds
+        .map(id => dataList.find(p => p.youtubeId === id))
+        .filter(Boolean);
+
       carouselEl.removeAttribute('data-cloned');
-      carouselEl.innerHTML = dataList.map(item => createProjectCardHTML(item, true)).join('');
+      carouselEl.innerHTML = carouselItems.map(item => createProjectCardHTML(item, true)).join('');
       initProjectsCarousel();
     }
 
@@ -567,57 +609,52 @@
     const carousel = document.getElementById('projects-carousel');
     if (!carousel) return;
 
-    let originalCards = Array.from(carousel.getElementsByClassName('carousel-card'));
-    const prevBtn = document.getElementById('carousel-prev');
-    const nextBtn = document.getElementById('carousel-next');
-    const dotsContainer = document.getElementById('carousel-dots');
-    
+    // Clean up any previously running carousel instance
+    if (window._carouselController && typeof window._carouselController.destroy === 'function') {
+      window._carouselController.destroy();
+      window._carouselController = null;
+    }
+
+    // Filter to only original cards (ignore existing clones)
+    let originalCards = Array.from(carousel.children).filter(card => !card.classList.contains('is-clone'));
     if (originalCards.length === 0) return;
 
     const N = originalCards.length;
 
+    // Reset carousel innerHTML to only clean original cards
+    carousel.innerHTML = '';
+    originalCards.forEach(card => {
+      card.classList.remove('is-clone', 'pos-active', 'pos-inactive');
+      carousel.appendChild(card);
+    });
+
     // Create cloned sets before and after original cards for seamless infinite loop
-    if (!carousel.dataset.cloned) {
-      originalCards.forEach(card => {
-        const cloneBefore = card.cloneNode(true);
-        cloneBefore.classList.add('is-clone');
-        carousel.insertBefore(cloneBefore, originalCards[0]);
-      });
+    originalCards.forEach(card => {
+      const cloneBefore = card.cloneNode(true);
+      cloneBefore.classList.add('is-clone');
+      carousel.insertBefore(cloneBefore, originalCards[0]);
+    });
 
-      originalCards.forEach(card => {
-        const cloneAfter = card.cloneNode(true);
-        cloneAfter.classList.add('is-clone');
-        carousel.appendChild(cloneAfter);
-      });
-
-      carousel.dataset.cloned = "true";
-    }
+    originalCards.forEach(card => {
+      const cloneAfter = card.cloneNode(true);
+      cloneAfter.classList.add('is-clone');
+      carousel.appendChild(cloneAfter);
+    });
 
     const allCards = Array.from(carousel.getElementsByClassName('carousel-card'));
     let virtualIndex = 0; // 0 to N-1 maps to the middle set (N to 2N-1)
     let isTransitioning = false;
     let autoSlideTimer = null;
+    let transitionTimeout = null;
 
-    // Create pagination dots for original N items
-    if (dotsContainer) {
-      dotsContainer.innerHTML = '';
-      originalCards.forEach((_, idx) => {
-        const dot = document.createElement('div');
-        dot.className = `dot ${idx === 0 ? 'active' : ''}`;
-        dot.addEventListener('click', () => {
-          if (isTransitioning) return;
-          virtualIndex = idx;
-          updateCarousel(true);
-          resetAutoSlide();
-        });
-        dotsContainer.appendChild(dot);
-      });
-    }
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const dotsContainer = document.getElementById('carousel-dots');
 
     function updateCarousel(withTransition = true) {
       const firstCard = allCards[0];
       const defaultWidth = isMobile ? Math.floor(window.innerWidth * 0.82) : 340;
-      const cardWidth = (firstCard && firstCard.offsetWidth) ? firstCard.offsetWidth : defaultWidth;
+      const cardWidth = (firstCard && firstCard.offsetWidth > 0) ? firstCard.offsetWidth : defaultWidth;
       const gap = isMobile ? 16 : 24;
       const step = cardWidth + gap;
 
@@ -626,9 +663,16 @@
       if (withTransition) {
         carousel.style.transition = 'transform 0.55s cubic-bezier(0.25, 1, 0.5, 1)';
         isTransitioning = true;
+
+        clearTimeout(transitionTimeout);
+        // Safety timeout so isTransitioning is NEVER permanently stuck
+        transitionTimeout = setTimeout(() => {
+          handleTransitionEnd();
+        }, 580);
       } else {
         carousel.style.transition = 'none';
         isTransitioning = false;
+        clearTimeout(transitionTimeout);
       }
 
       // Center active card horizontally
@@ -655,9 +699,11 @@
       }
     }
 
-    // Seamless instant wrap when reaching clone boundaries
-    carousel.addEventListener('transitionend', () => {
+    function handleTransitionEnd() {
+      if (!isTransitioning) return;
       isTransitioning = false;
+      clearTimeout(transitionTimeout);
+
       if (virtualIndex >= N) {
         virtualIndex = virtualIndex % N;
         updateCarousel(false);
@@ -665,7 +711,10 @@
         virtualIndex = ((virtualIndex % N) + N) % N;
         updateCarousel(false);
       }
-    });
+    }
+
+    // Direct assignment prevents multiple or stale closures on transitionend
+    carousel.ontransitionend = handleTransitionEnd;
 
     function nextSlide() {
       if (isTransitioning) return;
@@ -682,10 +731,18 @@
     function startAutoSlide() {
       stopAutoSlide();
       autoSlideTimer = setInterval(nextSlide, 3500);
+      window._carouselAutoSlideTimer = autoSlideTimer;
     }
 
     function stopAutoSlide() {
-      if (autoSlideTimer) clearInterval(autoSlideTimer);
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+      if (window._carouselAutoSlideTimer) {
+        clearInterval(window._carouselAutoSlideTimer);
+        window._carouselAutoSlideTimer = null;
+      }
     }
 
     function resetAutoSlide() {
@@ -693,41 +750,76 @@
       startAutoSlide();
     }
 
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        nextSlide();
-        resetAutoSlide();
+    // Create pagination dots for original N items
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      originalCards.forEach((_, idx) => {
+        const dot = document.createElement('div');
+        dot.className = `dot ${idx === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => {
+          if (isTransitioning) return;
+          virtualIndex = idx;
+          updateCarousel(true);
+          resetAutoSlide();
+        });
+        dotsContainer.appendChild(dot);
       });
     }
 
+    if (nextBtn) {
+      nextBtn.onclick = () => {
+        nextSlide();
+        resetAutoSlide();
+      };
+    }
+
     if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
+      prevBtn.onclick = () => {
         prevSlide();
         resetAutoSlide();
-      });
+      };
     }
+
+    // Card click listener
+    allCards.forEach((card, idx) => {
+      card.onclick = (e) => {
+        const targetVirt = idx - N;
+        if (targetVirt !== virtualIndex && !isTransitioning) {
+          virtualIndex = targetVirt;
+          updateCarousel(true);
+          resetAutoSlide();
+        }
+      };
+    });
+
+    // Hover pause & resume
+    const parentContainer = carousel.closest('.carousel-wrapper') || carousel.parentElement;
+    const onMouseEnter = () => stopAutoSlide();
+    const onMouseLeave = () => startAutoSlide();
+    if (parentContainer) {
+      parentContainer.addEventListener('mouseenter', onMouseEnter);
+      parentContainer.addEventListener('mouseleave', onMouseLeave);
+    }
+
+    // Window resize
+    const onResize = () => updateCarousel(false);
+    window.addEventListener('resize', onResize, { passive: true });
 
     // Touch Swipe Gesture Engine (Smooth Mobile Touch Carousel)
     let touchStartX = 0;
     let touchStartY = 0;
-    let touchEndX = 0;
-    let touchEndY = 0;
-
-    carousel.addEventListener('touchstart', (e) => {
+    const onTouchStart = (e) => {
       stopAutoSlide();
       if (e.touches && e.touches.length > 0) {
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
       }
-    }, { passive: true });
+    };
 
-    carousel.addEventListener('touchend', (e) => {
+    const onTouchEnd = (e) => {
       if (e.changedTouches && e.changedTouches.length > 0) {
-        touchEndX = e.changedTouches[0].clientX;
-        touchEndY = e.changedTouches[0].clientY;
-
-        const deltaX = touchEndX - touchStartX;
-        const deltaY = touchEndY - touchStartY;
+        const deltaX = e.changedTouches[0].clientX - touchStartX;
+        const deltaY = e.changedTouches[0].clientY - touchStartY;
 
         // Trigger swipe if horizontal movement > vertical movement and threshold > 35px
         if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 35) {
@@ -739,33 +831,29 @@
         }
       }
       resetAutoSlide();
-    }, { passive: true });
+    };
 
-    allCards.forEach((card, idx) => {
-      card.addEventListener('click', (e) => {
-        const targetVirt = idx - N;
-        if (targetVirt !== virtualIndex && !isTransitioning) {
-          virtualIndex = targetVirt;
-          updateCarousel(true);
-          resetAutoSlide();
-        }
-        const targetCard = e.target.closest('[data-youtube-id]');
-        const youtubeId = targetCard ? targetCard.getAttribute('data-youtube-id') : card.getAttribute('data-youtube-id');
-        if (youtubeId && window.openCinemaPlayer) {
-          window.openCinemaPlayer(youtubeId);
-        }
-      });
-    });
-
-    if (carousel.parentElement) {
-      carousel.parentElement.addEventListener('mouseenter', stopAutoSlide);
-      carousel.parentElement.addEventListener('mouseleave', startAutoSlide);
-    }
-
-    window.addEventListener('resize', () => updateCarousel(false), { passive: true });
+    carousel.addEventListener('touchstart', onTouchStart, { passive: true });
+    carousel.addEventListener('touchend', onTouchEnd, { passive: true });
 
     updateCarousel(false);
     startAutoSlide();
+
+    // Store cleanup controller for future re-render calls
+    window._carouselController = {
+      destroy: () => {
+        stopAutoSlide();
+        clearTimeout(transitionTimeout);
+        carousel.ontransitionend = null;
+        if (parentContainer) {
+          parentContainer.removeEventListener('mouseenter', onMouseEnter);
+          parentContainer.removeEventListener('mouseleave', onMouseLeave);
+        }
+        window.removeEventListener('resize', onResize);
+        carousel.removeEventListener('touchstart', onTouchStart);
+        carousel.removeEventListener('touchend', onTouchEnd);
+      }
+    };
   }
 
   // =========================================================================
@@ -813,7 +901,7 @@
     const modalCards = modal.querySelectorAll('.modal-project-card');
 
     filterTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
+      tab.onclick = () => {
         filterTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
 
@@ -826,7 +914,7 @@
             card.classList.add('hide');
           }
         });
-      });
+      };
     });
 
     // Open Cinema Video Player on Modal Card click
@@ -1281,7 +1369,10 @@
   }
   window.closeAllModals = closeAllModals;
 
+  let setupExecuted = false;
   function setupFeatures() {
+    if (setupExecuted) return;
+    setupExecuted = true;
     initGlobalModalDelegation();
     initProjectsCarousel();
     initProjectsModal();
