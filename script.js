@@ -341,7 +341,7 @@
       "categorySlug": "ai-video editing",
       "description": "High-converting AI commercial reel crafted for vintage combo brand with dynamic product pacing, custom sound design, and viral retention.",
       "youtubeId": "H0g3pCASyz4",
-      "thumbnail": "public/images/ai-commercial-1.jpg",
+      "thumbnail": "ai-commercial-1.jpg",
       "tags": ["AI Commercial", "Premiere Pro", "Branding", "Reel"]
     },
     {
@@ -351,7 +351,7 @@
       "categorySlug": "ai-video editing",
       "description": "Clean, engaging AI talking head reel with retention-focused editing, synchronized kinetic captions, and seamless audio enhancement.",
       "youtubeId": "cIppQuO4TdE",
-      "thumbnail": "public/images/ai-commercial-2.jpg",
+      "thumbnail": "ai-commercial-2.jpg",
       "tags": ["AI Talking Head", "Reels", "Video Editing", "Content"]
     },
     {
@@ -381,7 +381,7 @@
       "categorySlug": "ai-video scripting editing",
       "description": "Full AI-generated promotional short film for Shubh Computer Education. Custom script, AI character synthesis, ElevenLabs voiceover, and sound design.",
       "youtubeId": "ovGpENKV_Yc",
-      "thumbnail": "public/images/scholarship-promotion-ai.jpg",
+      "thumbnail": "scholarship-promotion-ai.jpg",
       "tags": ["AI Short Film", "Promotion", "Scriptwriting", "Voiceover"]
     },
     {
@@ -391,7 +391,7 @@
       "categorySlug": "ai-video editing",
       "description": "Comprehensive breakdown of high-converting AI commercial advantages for businesses, brand storytelling, and full-funnel advertisement mastery.",
       "youtubeId": "ZQwVLIkF0cQ",
-      "thumbnail": "public/images/gig-showreel.jpg",
+      "thumbnail": "gig-showreel.jpg",
       "tags": ["AI Commercial", "Showreel", "Client Service", "Voiceover"]
     },
     {
@@ -421,7 +421,7 @@
       "categorySlug": "ai-video scripting editing",
       "description": "Full AI-generated narrative commercial. Concept, scriptwriting, AI character synthesis, Premiere Pro editing, and After Effects sound design.",
       "youtubeId": "RmndE-qelJ8",
-      "thumbnail": "public/images/kjsst-mobile-finance.jpg",
+      "thumbnail": "kjsst-mobile-finance.jpg",
       "tags": ["AI Short Film", "Premiere Pro", "After Effects", "Direction"]
     },
     {
@@ -431,7 +431,7 @@
       "categorySlug": "motion editing",
       "description": "13-second high-energy kinetic intro & fashion montage for New Kumar Collection. Custom typography, 3D motion graphics, and chemical VFX in After Effects.",
       "youtubeId": "XOiF_tvb0xo",
-      "thumbnail": "public/images/breaking-bad-montage.jpg",
+      "thumbnail": "breaking-bad-montage.jpg",
       "tags": ["After Effects", "Motion Graphics", "Typography", "VFX"]
     },
     {
@@ -441,7 +441,7 @@
       "categorySlug": "ai-video editing",
       "description": "High-impact commercial video for KMR Wholesale Electronics. AI image synthesis, product compositing, dynamic typography, and pacing.",
       "youtubeId": "bACz4j1bdJg",
-      "thumbnail": "public/images/kmr-wholesale.jpg",
+      "thumbnail": "kmr-wholesale.jpg",
       "tags": ["AI Commercial", "Premiere Pro", "Compositing", "E-commerce"]
     }
   ];
@@ -451,10 +451,9 @@
   function createProjectCardHTML(item, isCarousel = false) {
     const rawThumb = item.thumbnail || '';
     let thumbSrc = rawThumb;
-    if (rawThumb.startsWith('/images/')) {
-      thumbSrc = 'public' + rawThumb;
-    } else if (rawThumb.startsWith('images/')) {
-      thumbSrc = 'public/' + rawThumb;
+    if (rawThumb && !rawThumb.startsWith('http')) {
+      // Strip any folder prefixes to try root first, but allow graceful fallback
+      thumbSrc = rawThumb.replace(/^(\/?public\/?|\/?images\/)+/, '');
     }
     const catSlug = item.categorySlug || 'ai-video editing';
     const tagSpans = (item.tags || []).map(t => `<span>${t}</span>`).join('');
@@ -462,7 +461,7 @@
     return `
       <div class="project-card ${isCarousel ? 'carousel-card' : 'modal-project-card'}" data-id="${item.id}" data-category="${catSlug}" data-youtube-id="${item.youtubeId}">
         <div class="project-thumb">
-          <img src="${thumbSrc}" onerror="this.src='https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg'" alt="${item.title}">
+          <img src="${thumbSrc}" onerror="if(!this.dataset.fb){this.dataset.fb=1;this.src='public/images/'+this.src.split('/').pop();}else{this.src='https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg';}" alt="${item.title}">
           <div class="play-overlay">
             <span class="play-btn">▶</span>
           </div>
